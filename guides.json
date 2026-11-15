@@ -1,0 +1,428 @@
+[
+  {
+    "id": "g1",
+    "cat": "water",
+    "category": "Water",
+    "title": "Treat questionable freshwater",
+    "level": "Beginner",
+    "overview": "Clear water is not necessarily safe. Filtration and disinfection solve different problems.",
+    "materials": [
+      "Container for settling",
+      "Clean cloth or coffee filter",
+      "Pot and heat source, or correctly labeled water disinfectant",
+      "Clean covered storage container"
+    ],
+    "steps": [
+      "Choose the least contaminated freshwater source available. Avoid water near chemical spills, floodwater, industrial discharge, or algal blooms.",
+      "Let muddy water settle, then carefully pour the clearer upper portion into a second container.",
+      "Pass water through clean cloth or a coffee filter to remove suspended particles. This does not remove germs reliably.",
+      "For clear water, bring to a rolling boil for 1 minute; above 6,500 feet elevation, boil for 3 minutes. Allow to cool naturally.",
+      "Store in a clean, covered container without touching the inside of the lid or opening."
+    ],
+    "warning": "Boiling kills many disease-causing organisms but does not remove dissolved chemicals, heavy metals, or salt. A homemade sand/charcoal filter is not a validated purifier. If fuel is unavailable, use only a disinfectant specifically labeled for drinking-water treatment and follow its instructions."
+  },
+  {
+    "id": "g2",
+    "cat": "water",
+    "category": "Water",
+    "title": "Collect and store rainwater",
+    "level": "Beginner",
+    "overview": "Collection is not the same as purification.",
+    "materials": [
+      "Clean tarp or suitable roof catchment",
+      "Food-safe collection container",
+      "Cover or screen",
+      "Clean storage vessel"
+    ],
+    "steps": [
+      "Place the catchment away from animal droppings, treated wood, and chemical runoff.",
+      "Slope the catchment toward a clean collection point.",
+      "Discard the initial dirty runoff, especially after a dry spell.",
+      "Cover collected water against insects and debris.",
+      "Treat rainwater as potentially contaminated before drinking, using an appropriate validated method."
+    ],
+    "warning": "Do not assume rainwater from a roof is drinkable. Chemical contamination cannot be made safe by boiling."
+  },
+  {
+    "id": "g3",
+    "cat": "navigation",
+    "category": "Navigation",
+    "title": "Find east and west with a shadow stick",
+    "level": "Beginner",
+    "overview": "Works with sunlight and a stable, roughly level surface.",
+    "materials": [
+      "Straight stick",
+      "Two small stones",
+      "Open sunny ground"
+    ],
+    "steps": [
+      "Plant the stick upright in level ground.",
+      "Mark the tip of its shadow with the first stone.",
+      "Wait 15–30 minutes, ensuring the stick does not move.",
+      "Mark the new shadow tip with the second stone.",
+      "Draw a line from the first mark to the second. It approximates west to east, respectively.",
+      "Face with the first mark to your left and second to your right; you are facing approximately north."
+    ],
+    "warning": "This gives an approximate direction, not a precise bearing. Shadows can shift with season and latitude; do not rely on a single method for dangerous navigation."
+  },
+  {
+    "id": "g4",
+    "cat": "navigation",
+    "category": "Navigation",
+    "title": "Estimate time using the sun",
+    "level": "Beginner",
+    "overview": "Solar noon is not necessarily 12:00 on a civil clock.",
+    "materials": [
+      "Vertical stick",
+      "Level ground",
+      "Pebbles or chalk",
+      "Optional watch for calibration"
+    ],
+    "steps": [
+      "Observe a vertical stick’s shadow over several hours.",
+      "Mark shadow-tip positions at regular intervals.",
+      "The shortest shadow near midday approximates local solar noon, assuming suitable conditions.",
+      "If you have a clock, label marks with clock times for that location and date.",
+      "Use the calibrated marks for rough time estimates on nearby days."
+    ],
+    "warning": "Do not infer exact clock time from sun position without date, latitude, longitude, and time-zone corrections. The sun’s height changes by season."
+  },
+  {
+    "id": "g5",
+    "cat": "navigation",
+    "category": "Navigation",
+    "title": "Navigate by Polaris",
+    "level": "Beginner",
+    "overview": "Northern Hemisphere nighttime direction-finding.",
+    "materials": [
+      "Clear view of northern sky",
+      "Optional star chart"
+    ],
+    "steps": [
+      "Locate the Big Dipper if visible.",
+      "Find the two outer stars on the edge of its bowl (the pointer stars).",
+      "Follow their line roughly five times their separation toward Polaris.",
+      "Identify Polaris at the end of the Little Dipper’s handle.",
+      "Look toward the point on the horizon beneath Polaris for approximate true north."
+    ],
+    "warning": "Polaris is not useful in the Southern Hemisphere and can be obscured. Confirm using other cues."
+  },
+  {
+    "id": "g6",
+    "cat": "shelter",
+    "category": "Shelter",
+    "title": "Build a basic A-frame tarp shelter",
+    "level": "Beginner",
+    "overview": "A quick rain-shedding structure for mild to moderate conditions.",
+    "materials": [
+      "Waterproof tarp",
+      "Strong cordage",
+      "Two stable anchor points",
+      "Four or more stakes or secure tie-offs",
+      "Insulating ground pad"
+    ],
+    "steps": [
+      "Choose elevated ground outside flood channels, away from dead branches and unstable trees.",
+      "Run a taut ridgeline between stable anchor points at a practical height.",
+      "Drape the tarp evenly over the ridgeline.",
+      "Stake or tie both lower edges outward to form a steep roof.",
+      "Tension corners and orient the narrow end toward prevailing wind.",
+      "Place insulation under sleepers; check runoff paths and ventilation."
+    ],
+    "warning": "Avoid open flames and fuel-burning heaters inside tarp shelters. A tarp alone provides little insulation. Relocate rather than shelter under hazardous trees or in flood-prone areas."
+  },
+  {
+    "id": "g7",
+    "cat": "shelter",
+    "category": "Shelter",
+    "title": "Make a ground-insulated sleeping area",
+    "level": "Beginner",
+    "overview": "Ground insulation often matters more than adding another blanket above you.",
+    "materials": [
+      "Dry cardboard, foam pads, or dry vegetation",
+      "Water-resistant groundsheet",
+      "Blankets or sleeping bag"
+    ],
+    "steps": [
+      "Select dry, elevated ground.",
+      "Lay a moisture barrier beneath the sleeping area.",
+      "Add a thick, continuous insulating layer above the barrier.",
+      "Cover sharp edges and keep bedding off wet soil.",
+      "Keep the sleeping area ventilated and protected from rain."
+    ],
+    "warning": "Do not use unknown chemically treated or contaminated scavenged materials against skin."
+  },
+  {
+    "id": "g8",
+    "cat": "heat",
+    "category": "Heating",
+    "title": "Evaluate a candle-and-metal heat diffuser",
+    "level": "Beginner",
+    "overview": "A candle diffuser does not multiply heat; it only changes how heat is distributed.",
+    "materials": [
+      "Candle",
+      "Stable nonflammable base",
+      "Metal container (for demonstration only)",
+      "Thermometer if available"
+    ],
+    "steps": [
+      "Estimate whether insulation and warmer clothing can meet the need without combustion.",
+      "If studying the concept, observe how metal becomes hot near a candle in a controlled, ventilated demonstration.",
+      "Compare temperature changes at a safe distance; do not touch hot metal.",
+      "Extinguish the candle before leaving the area."
+    ],
+    "warning": "Do not use DIY candle heaters inside tents, small shelters, or while sleeping. Open flames, tipping, hot surfaces, oxygen depletion, and carbon monoxide are serious risks. Never seal a burning candle inside a container."
+  },
+  {
+    "id": "g9",
+    "cat": "heat",
+    "category": "Heating",
+    "title": "Warm a sleeping space without combustion",
+    "level": "Beginner",
+    "overview": "Reduce heat loss before attempting to generate heat.",
+    "materials": [
+      "Dry clothing",
+      "Ground insulation",
+      "Blankets or sleeping bag",
+      "Suitable warm-water bottle if available"
+    ],
+    "steps": [
+      "Replace wet clothing with dry layers.",
+      "Insulate the ground beneath the sleeper.",
+      "Reduce drafts while preserving necessary ventilation.",
+      "Use a properly sealed warm—not scalding—water bottle wrapped in fabric if available.",
+      "Monitor for shivering, confusion, clumsiness, or worsening cold stress."
+    ],
+    "warning": "Suspected hypothermia is an emergency. Do not apply direct high heat to numb skin or give oral fluids to someone unable to swallow safely."
+  },
+  {
+    "id": "g10",
+    "cat": "power",
+    "category": "Electricity",
+    "title": "Plan a small solar battery station",
+    "level": "Beginner",
+    "overview": "A safe architecture begins with compatible ratings and protective devices.",
+    "materials": [
+      "Solar panel with readable voltage/current label",
+      "Compatible solar charge controller",
+      "Manufacturer-approved battery with appropriate protection",
+      "Correctly rated fuse and wiring",
+      "Multimeter",
+      "Optional rated USB DC converter"
+    ],
+    "steps": [
+      "Write down the solar panel open-circuit voltage, operating voltage, and current from its label.",
+      "Identify the battery chemistry and nominal voltage; do not use damaged or unidentified cells.",
+      "Choose a charge controller explicitly compatible with both panel and battery chemistry.",
+      "Size cables and fuses to the device ratings and manufacturer guidance; install overcurrent protection near the battery positive terminal.",
+      "With all sources disconnected, verify polarity and wiring against the controller manual.",
+      "Connect in the manufacturer-required sequence; many controllers require battery first, then solar.",
+      "Measure output and confirm the controller reports normal charging before connecting a load."
+    ],
+    "warning": "Never connect a solar panel directly to a lithium battery. Do not disassemble or rebuild salvaged lithium packs, bypass a battery-management system, or work on household mains wiring. Exact wiring depends on actual component models."
+  },
+  {
+    "id": "g11",
+    "cat": "power",
+    "category": "Electricity",
+    "title": "Bicycle generator: low-voltage concept",
+    "level": "Beginner",
+    "overview": "Pedaling can generate useful low-voltage power, but output varies with speed and load.",
+    "materials": [
+      "Stationary bicycle or secure trainer",
+      "Suitable permanent-magnet DC motor",
+      "Mechanical coupling and guarded mount",
+      "Multimeter",
+      "Appropriate rectification/regulation and protected load"
+    ],
+    "steps": [
+      "Secure the bicycle so it cannot tip or roll.",
+      "Identify a motor with known ratings and inspect for damage.",
+      "Design a guarded roller, belt, or chain drive so no clothing or fingers can enter moving parts.",
+      "Spin the motor by hand and measure open-circuit DC voltage with a multimeter.",
+      "Measure voltage at different speeds and determine polarity.",
+      "Choose a regulator and load matched to the measured voltage and current; test with a small protected load first."
+    ],
+    "warning": "Do not attach phones or batteries directly to an unregulated generator. Moving chains, belts, and exposed wiring can cause injury. Never connect a homemade generator to building wiring."
+  },
+  {
+    "id": "g12",
+    "cat": "power",
+    "category": "Electricity",
+    "title": "Water and wind generator feasibility",
+    "level": "Beginner",
+    "overview": "Measure the energy source before choosing a turbine or generator.",
+    "materials": [
+      "Measuring tape",
+      "Timer",
+      "Notebook",
+      "Optional flow meter or anemometer"
+    ],
+    "steps": [
+      "For water, identify usable flow and vertical drop (head); never enter dangerous water to measure.",
+      "For wind, record wind conditions at the proposed installation height over time.",
+      "Estimate expected power using realistic efficiencies rather than peak claims.",
+      "Select an appropriately rated turbine and generator, with regulation and protective shutdown provisions.",
+      "Plan anchoring, guarding, flood protection, and safe maintenance access."
+    ],
+    "warning": "DIY turbines can overspeed, shed blades, and create hazardous voltages. Water installations may need permits and can affect habitats. A heat-powered thermoelectric generator also requires a maintained temperature difference and suitable thermal protection."
+  },
+  {
+    "id": "g13",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Make an emergency listening plan",
+    "level": "Beginner",
+    "overview": "Receive information before attempting two-way communication.",
+    "materials": [
+      "Battery or hand-crank AM/FM/NOAA receiver",
+      "Spare batteries or safe charging method",
+      "Notebook",
+      "Optional external antenna per manufacturer"
+    ],
+    "steps": [
+      "Learn how to switch among AM, FM, and NOAA weather bands on your actual radio.",
+      "Scan for local broadcast stations while conditions are normal.",
+      "Write down reliable stations and the kind of information they provide.",
+      "Test reception at multiple positions, away from electrical noise.",
+      "Schedule brief listening windows to conserve battery."
+    ],
+    "warning": "NOAA weather radio uses seven VHF frequencies from 162.400 to 162.550 MHz and requires a compatible receiver. A crystal AM radio cannot receive NOAA broadcasts."
+  },
+  {
+    "id": "g14",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Build a simple AM crystal receiver: planning guide",
+    "level": "Intermediate",
+    "overview": "A passive AM receiver is possible near sufficiently strong AM transmitters.",
+    "materials": [
+      "Enamelled copper wire for tuned coil",
+      "Variable capacitor or suitable tuning circuit",
+      "Germanium diode or suitable detector",
+      "High-impedance earphone",
+      "Antenna and safe ground arrangement"
+    ],
+    "steps": [
+      "Identify the coil, capacitor, detector diode, and high-impedance earphone functions.",
+      "Choose a published, verified schematic matched to available parts.",
+      "Wind the coil to the schematic specifications and verify continuity.",
+      "Assemble the tuning circuit and detector on an insulated board.",
+      "Connect a safe antenna and listen while adjusting the tuning capacitor."
+    ],
+    "warning": "Never connect an antenna to utility wiring or position it near power lines. Crystal radios depend on signal strength and are not reliable emergency receivers in all locations."
+  },
+  {
+    "id": "g15",
+    "cat": "food",
+    "category": "Food",
+    "title": "Start a small food garden",
+    "level": "Beginner",
+    "overview": "Begin with soil, water, season, and realistic crop selection.",
+    "materials": [
+      "Seeds suited to local season",
+      "Growing area or containers",
+      "Clean water source",
+      "Basic hand tools",
+      "Compost from safe materials"
+    ],
+    "steps": [
+      "Choose a site with sufficient sunlight and safe soil.",
+      "Check drainage and consider soil testing for contamination and nutrients.",
+      "Select crops suited to the local season and available growing time.",
+      "Prepare beds or containers and follow packet instructions for depth and spacing.",
+      "Water consistently, mulch where suitable, and inspect for pests.",
+      "Record planting dates, germination, and harvest outcomes."
+    ],
+    "warning": "Avoid gardening in contaminated soil or using untreated human waste as fertilizer. Edible crops require safe irrigation water."
+  },
+  {
+    "id": "g16",
+    "cat": "food",
+    "category": "Food",
+    "title": "Identify wild plants cautiously",
+    "level": "Beginner",
+    "overview": "A picture match is never proof that a plant is edible.",
+    "materials": [
+      "Regional field guide with scientific names",
+      "Notebook",
+      "Camera or sketchbook",
+      "Magnifier"
+    ],
+    "steps": [
+      "Photograph or sketch leaves, stem, flowers, fruit, and whole growth habit.",
+      "Record habitat, location, season, and whether multiple plants grow together.",
+      "Compare multiple identifying features against a region-specific botanical key.",
+      "Investigate toxic lookalikes and whether any required feature is missing.",
+      "If any uncertainty remains, do not consume or use medicinally."
+    ],
+    "warning": "Never use taste tests to identify unknown plants or mushrooms. AI identification can be wrong. Avoid harvesting from roadsides, pesticide-treated areas, and contaminated water."
+  },
+  {
+    "id": "g17",
+    "cat": "food",
+    "category": "Food",
+    "title": "Plan humane live trapping",
+    "level": "Beginner",
+    "overview": "Animal capture requires legal, welfare, and disease precautions.",
+    "materials": [
+      "Species-appropriate commercially made live trap",
+      "Protective gloves",
+      "Local wildlife rules",
+      "Contact for wildlife rehabilitator or animal control"
+    ],
+    "steps": [
+      "Identify the target species from multiple signs rather than tracks alone.",
+      "Check local trapping regulations and landowner permission.",
+      "Select an appropriate humane trap for the species and conditions.",
+      "Place the trap where non-target animals and children are unlikely to encounter it.",
+      "Check at intervals required by local law and animal welfare guidance.",
+      "Arrange safe, lawful handling or release with appropriate expert guidance."
+    ],
+    "warning": "Improvised traps can injure animals and people. Avoid handling wildlife directly; bites, parasites, and zoonotic disease are risks. Rules differ by species and jurisdiction."
+  },
+  {
+    "id": "g18",
+    "cat": "food",
+    "category": "Food",
+    "title": "Preserve food without guessing",
+    "level": "Beginner",
+    "overview": "Food safety depends on the exact method, acidity, temperature, and time.",
+    "materials": [
+      "Clean containers",
+      "Thermometer where required",
+      "Validated preservation recipe",
+      "Clean preparation surface"
+    ],
+    "steps": [
+      "Identify the food and choose a tested preservation method.",
+      "For canning, use a current validated recipe from a recognized extension or food-safety authority.",
+      "Use pressure canning for low-acid foods when the tested recipe requires it.",
+      "Follow exact jar size, process time, pressure, and altitude adjustments.",
+      "Label and store properly; discard suspect food without tasting."
+    ],
+    "warning": "Do not invent canning times or substitute water-bath canning for pressure canning. Botulism toxin may be present without visible spoilage."
+  },
+  {
+    "id": "g19",
+    "cat": "repair",
+    "category": "Salvage & Repair",
+    "title": "Identify and test a salvaged DC motor",
+    "level": "Beginner",
+    "overview": "Learn the difference between a motor, generator, and alternator.",
+    "materials": [
+      "Unplugged salvaged motor",
+      "Multimeter",
+      "Insulated leads",
+      "Notebook"
+    ],
+    "steps": [
+      "Disconnect equipment from all power sources; do not open sealed batteries or mains-powered capacitor sections.",
+      "Inspect the motor for damage, corrosion, and readable labels.",
+      "Record rated voltage, current, and model if present.",
+      "Measure winding continuity with a multimeter on an unpowered motor.",
+      "If it is a permanent-magnet DC motor, rotate the shaft by hand and measure small generated voltage."
+    ],
+    "warning": "Appliances may retain dangerous charge after unplugging. Do not salvage parts from microwaves, CRT televisions, or high-voltage power supplies without qualified supervision."
+  }
+]

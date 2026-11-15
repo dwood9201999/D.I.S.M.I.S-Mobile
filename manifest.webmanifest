@@ -1,1 +1,17 @@
-{"name":"D.I.S.M.I.S. Survival Library","short_name":"D.I.S.M.I.S.","description":"Offline-first survival library and field notes","start_url":"./index.html","scope":"./","display":"standalone","background_color":"#0d1620","theme_color":"#101b26","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "D.I.S.M.I.S. Field Workshop",
+  "short_name": "D.I.S.M.I.S.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#091713",
+  "theme_color": "#102923",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
