@@ -1,5 +1,5 @@
 import { electrical, parts } from './electrical.js';
-import { drawPart } from './component-art.js';
+import { componentPhotos } from './component-photos.js';
 import { searchCatalog, receiverRuntime, createIntegrations } from './workshop.js';
 import { installOffline } from './offline-assets.js';
 
@@ -139,11 +139,24 @@ function renderElectrical(guideId) {
   if (!entry) return '';
   return `<section aria-label="Electrical build notes">
     <h3>Recognize the components</h3>
-    <p class="muted">Illustrations show typical shapes. Check labels and model drawings before making a connection.</p>
+    <p class="muted">Reference photos show example parts. Check the markings and manual for your exact model before wiring.</p>
     <div class="part-grid">${entry.parts.map(id => {
       const [name, appearance, source, verify] = parts[id];
-      return `<article class="part"><canvas width="200" height="94" data-part="${id}" aria-hidden="true"></canvas>
-        <h4>${escape(name)}</h4><p>${escape(appearance)}</p>
+      const photo = componentPhotos[id];
+      return `<article class="part">
+        <h4>${escape(name)}</h4>
+        ${photo ? `<figure class="part-photo">
+          <a href="${escape(photo.path)}" target="_blank" rel="noopener" aria-label="Open full photo of ${escape(name)}">
+            <img src="${escape(photo.path)}" alt="${escape(photo.caption)}" loading="lazy">
+          </a>
+          <figcaption>${escape(photo.caption)}
+            <details><summary>Photo credit</summary>
+              <a href="${escape(photo.source)}">${escape(photo.title)}</a> by ${escape(photo.author)} ·
+              ${photo.licenseURL ? `<a href="${escape(photo.licenseURL)}">${escape(photo.license)}</a>` : escape(photo.license)} · resized
+            </details>
+          </figcaption>
+        </figure>` : '<p class="muted">Reference photo pending.</p>'}
+        <p>${escape(appearance)}</p>
         <p><strong>Where to find it.</strong> ${escape(source)}</p>
         <p><strong>How to identify or check it.</strong> ${escape(verify)}</p></article>`;
     }).join('')}</div>
@@ -172,7 +185,6 @@ function renderGuide(guide) {
     ${sourceList(guide.sources)}
     <p id="progress-status" role="status" class="muted"></p>
     <button id="reset">Reset progress</button></article>`;
-  for (const canvas of main.querySelectorAll('[data-part]')) drawPart(canvas, canvas.dataset.part);
   function update() {
     const count = guide.steps.filter((_, index) => progress[index]).length;
     status('count', `${count} of ${guide.steps.length} steps completed`);

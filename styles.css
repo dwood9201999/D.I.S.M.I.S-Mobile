@@ -194,11 +194,29 @@ textarea {
   padding: 12px;
 }
 
-.part canvas {
+.part-photo {
+  margin: 8px 0 12px;
+}
+
+.part-photo img {
   display: block;
-  max-width: 100%;
-  height: auto;
-  margin: auto;
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #08130f;
+}
+
+.part-photo figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #b6cabe;
+  overflow-wrap: anywhere;
+}
+
+.part-photo summary {
+  cursor: pointer;
+  margin: 6px 0;
 }
 
 .part h4 {

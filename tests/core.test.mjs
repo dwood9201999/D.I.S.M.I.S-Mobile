@@ -93,5 +93,11 @@ test('all communications and electrical guides have offline part-identification 
     for (const connection of entry.wiring) assert.equal(connection.length, 3);
   }
   assert.ok(offlineAssets.includes('./electrical.js'));
-  assert.ok(offlineAssets.includes('./component-art.js'));
+  const { componentPhotos } = await import('../component-photos.js');
+  assert.equal(Object.keys(componentPhotos).length, Object.keys(parts).length);
+  for (const [id, photo] of Object.entries(componentPhotos)) {
+    assert.ok(parts[id], id);
+    assert.ok(photo.author && photo.license && photo.caption, id);
+    assert.ok(offlineAssets.includes(photo.path), id);
+  }
 });

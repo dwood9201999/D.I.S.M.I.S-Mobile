@@ -1,6 +1,9 @@
+import { componentPhotos } from './component-photos.js';
+
 export const offlineAssets = Object.freeze([
-  './', './index.html', './styles.css', './app.js', './workshop.js', './electrical.js', './component-art.js',
+  './', './index.html', './styles.css', './app.js', './workshop.js', './electrical.js', './component-photos.js',
   './offline-assets.js', './guides.json', './references.json', './morse.html',
+  ...Object.values(componentPhotos).map(photo => photo.path),
   './morse.js', './morse-core.js', './icon.svg', './manifest.webmanifest',
 ]);
 
