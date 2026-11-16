@@ -978,5 +978,157 @@
         "url": "https://smokeybear.com/uploads/educational-materials/smokeycampfiresafetyguide.pdf"
       }
     ]
+  },
+  {
+    "id": "field-common-plants",
+    "cat": "first-aid",
+    "category": "First Aid",
+    "title": "Common plant-based comfort preparations",
+    "overview": "Four accessible options for minor discomfort using identified food ingredients or labeled topical products.",
+    "keywords": [
+      "herbal medicine",
+      "peppermint",
+      "chamomile",
+      "aloe",
+      "oats",
+      "sunburn",
+      "itch"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Labeled food-grade peppermint leaves or tea",
+      "Labeled chamomile tea",
+      "Plain aloe moisturizer or gel labeled for skin",
+      "Colloidal oatmeal labeled for bathing",
+      "Potable water and a clean cup"
+    ],
+    "steps": [
+      "Peppermint: Steep labeled peppermint leaf or a tea bag in hot potable water according to its package. Cool before sipping. This is a comfort drink. Skip it if it aggravates reflux.",
+      "Chamomile: Steep a labeled tea bag according to the package and cool before sipping. Skip chamomile if you react to ragweed or related plants. Check for medication interactions before use, especially with warfarin.",
+      "Aloe: For mild sunburn on intact skin, cool the skin with a damp cloth first, then smooth on a thin layer of plain aloe moisturizer as labeled. Stop if it stings or causes a rash.",
+      "Oats: For minor itching on intact skin, mix a labeled colloidal oatmeal product into lukewarm bath water as directed. Blot dry. Take care because oatmeal can make the tub slippery.",
+      "Keep any wounds separate from herbal preparations. Clean minor scrapes with potable water and cover them with a clean dressing."
+    ],
+    "warning": "Use identified food-grade herbs and topical products for their labeled purpose. Skip unidentified plants, essential oils, aloe latex, and herbal preparations on broken skin. These are comfort measures and do not treat infection.",
+    "sources": [
+      {
+        "title": "NCCIH · Peppermint",
+        "url": "https://www.nccih.nih.gov/health/peppermint-oil"
+      },
+      {
+        "title": "NCCIH · Chamomile",
+        "url": "https://www.nccih.nih.gov/health/chamomile"
+      },
+      {
+        "title": "NCCIH · Aloe",
+        "url": "https://www.nccih.nih.gov/health/aloe-vera"
+      },
+      {
+        "title": "American Academy of Dermatology · Sunburn",
+        "url": "https://www.aad.org/public/everyday-care/injured-skin/burns/treat-sunburn"
+      }
+    ]
+  },
+  {
+    "id": "field-surface-alcohol",
+    "cat": "first-aid",
+    "category": "First Aid",
+    "title": "Cleaning and disinfecting with labeled alcohol",
+    "overview": "Clean first, use an appropriate labeled surface product, and prepare an approximate 70% solution from known-strength stock when suitable.",
+    "keywords": [
+      "sanitation",
+      "alcohol",
+      "isopropyl",
+      "70 percent",
+      "disinfect",
+      "rubbing alcohol",
+      "high grade"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Soap or detergent and clean water",
+      "Clean cloth or disposable wipes",
+      "EPA-registered disinfectant or labeled 70% isopropyl alcohol when approved for the item",
+      "Optional: labeled 91% isopropyl alcohol, distilled water and a clean graduated measure"
+    ],
+    "steps": [
+      "Wash visible dirt off hard surfaces with soap or detergent and water. Use a fresh cloth for the cleaned surface.",
+      "For disinfection, choose a registered product labeled for the surface and purpose. Keep the surface visibly wet for the contact time on its label. Follow any rinse step, especially for food-contact surfaces.",
+      "If an equipment maker calls for approximately 70% isopropyl alcohol for routine wiping and verified 91% stock is all you have, measure 77 mL of 91% stock. Add distilled water until the total volume reaches 100 mL. Mix in a clean, compatible container and label it with the contents, approximate concentration and date.",
+      "Use only on compatible hard surfaces as directed by their manufacturer. A homemade dilution has no validated disinfectant contact time. Use a registered product when verified disinfection is needed.",
+      "If alcohol is unavailable, continue routine cleaning with soap and water. If disinfection is needed and you have a suitable household bleach product, follow its label dilution, contact time and ventilation directions."
+    ],
+    "warning": "Never mix cleaners, heat alcohol, or use it near flame or sparks. Do not drink isopropyl alcohol, pour it into open wounds, or rely on it for sterilization. Fruit wine and cider are not surface disinfectants. U.S. federal law prohibits producing distilled spirits at home outside a qualified distilled spirits plant.",
+    "sources": [
+      {
+        "title": "CDC · Cleaning and disinfecting",
+        "url": "https://www.cdc.gov/hygiene/cleaning-disinfecting/"
+      },
+      {
+        "title": "CDC · Chemical disinfectants",
+        "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/chemical-disinfectants.html"
+      },
+      {
+        "title": "EPA · Contact time and product labels",
+        "url": "https://www.epa.gov/coronavirus-and-disinfectants/whats-difference-between-products-disinfect-sanitize-and-clean"
+      },
+      {
+        "title": "TTB · Home distilling",
+        "url": "https://www.ttb.gov/regulated-commodities/beverage-alcohol/distilled-spirits/penalties-for-illegal-distilling"
+      }
+    ]
+  },
+  {
+    "id": "food-ferment-fruit",
+    "cat": "food",
+    "category": "Food",
+    "title": "Fruit wine and cider without bought yeast",
+    "overview": "Apples make cider, pears make perry, and grapes make wine. Fruit can carry its own yeast. Use food-safe equipment already on hand, and understand the added risk of fermenting raw juice.",
+    "keywords": [
+      "wild yeast",
+      "homemade wine",
+      "cider",
+      "perry",
+      "apple",
+      "pear",
+      "grape",
+      "pine needles",
+      "low alcohol",
+      "fermentation"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Sound, positively identified edible apples, pears or grapes",
+      "Potable water, clean press or strainer, and clean food-safe fermentation vessel",
+      "Sanitized fermentation airlock and hydrometer",
+      "Option for a more controlled small batch: pasteurized apple juice and brewing yeast"
+    ],
+    "steps": [
+      "Choose fruit: tree-picked apples for cider, tree-picked pears for perry, or ripe edible grapes for wine. Use ripe, intact fruit. Discard groundfalls and fruit with mold, rot or animal contamination. Keep pine needles and other gathered plants out of the batch.",
+      "Wash hands and rinse the fruit under potable running water. Clean and sanitize all juice-contact equipment with a food-contact sanitizer according to its label. Press apples or pears to collect juice, or remove stems and crush grapes for their juice.",
+      "For a traditional spontaneous batch, use the fresh fruit juice and the yeast already present on the fruit. Add neither sugar nor pine needles. For a more predictable cider, use pasteurized apple juice and pitch brewing yeast according to its package.",
+      "Measure starting specific gravity with a clean hydrometer and write it down. Transfer the juice into a sanitized fermenter with headspace and fit a fermentation airlock. Keep the vessel at a stable temperature within a trusted recipe or yeast instructions. Never tightly cap an active ferment.",
+      "Track fermentation with sanitized hydrometer samples. For a dry cider, a reading near 1.000 that remains stable over several days helps indicate fermentation is complete. Stable high readings can indicate a stall. The approximate ABV is 131 times starting gravity minus final gravity, with the difference in parentheses. Gravity tracks fermentation and cannot verify that the drink is safe.",
+      "Discard the batch without tasting if you see mold or have doubts about sanitation. Skip carbonation and added sweeteners for this beginner batch. If you lack a clean fermenter, an airlock or a way to confirm fermentation is complete, avoid sealed bottling."
+    ],
+    "warning": "Untreated juice can carry pathogens. Spontaneous fermentation, bubbles, smell and alcohol level do not establish that raw juice is safe. Pasteurized juice with brewing yeast is the lower-risk choice. Never serve to children. Follow applicable alcohol laws. Yew and other evergreen look-alikes can be poisonous.",
+    "sources": [
+      {
+        "title": "Beer Judge Certification Program · Traditional cider and perry fermentation",
+        "url": "https://www.bjcp.org/exam-certification/cider-judge-program/cider-exam/9-the-cider-making-process/"
+      },
+      {
+        "title": "UGA Extension · Winemaking at home",
+        "url": "https://extension.uga.edu/publications/detail.html?number=C717"
+      },
+      {
+        "title": "FDA · Juice safety",
+        "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-juice-safety"
+      },
+      {
+        "title": "Poison Control · Plants",
+        "url": "https://www.poison.org/poison-prevention-by-substances/plants"
+      }
+    ]
   }
 ]
