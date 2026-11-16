@@ -253,3 +253,8 @@ textarea {
   overflow-wrap: anywhere;
   margin-top: 5px;
 }
+
+.iphone-shortcut {
+  display: inline-block;
+  padding: 8px 4px;
+}

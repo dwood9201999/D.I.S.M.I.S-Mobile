@@ -112,3 +112,16 @@ test('field chat ranks bundled projects and returns no answer for unrelated ques
   assert.deepEqual(search('Who invented croissants?'), []);
   assert.ok(offlineAssets.includes('./field-chat.js'));
 });
+
+test('iPhone handoff encodes the selected guide and question into a local Shortcuts URL', async () => {
+  const { iphoneShortcutURL } = await import('../field-chat.js');
+  const guide = guides.find(entry => entry.id === 'radio-crystal-loop');
+  const question = 'Which end is + & where does it go?';
+  const url = new URL(iphoneShortcutURL(question, guide));
+  assert.equal(url.protocol, 'shortcuts:');
+  assert.equal(url.hostname, 'run-shortcut');
+  assert.equal(url.searchParams.get('name'), 'DISMIS Offline AI');
+  assert.equal(url.searchParams.get('input'), 'text');
+  assert.ok(url.searchParams.get('text').includes(question));
+  assert.ok(url.searchParams.get('text').includes(guide.steps[0]));
+});

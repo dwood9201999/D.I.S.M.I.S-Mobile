@@ -1,4 +1,4 @@
-import { findFieldAnswers } from './field-chat.js';
+import { findFieldAnswers, iphoneShortcutURL } from './field-chat.js';
 import { electrical, parts } from './electrical.js';
 import { componentPhotos } from './component-photos.js';
 import { searchCatalog, receiverRuntime, createIntegrations } from './workshop.js';
@@ -86,6 +86,13 @@ function renderChat() {
       <input id="question" maxlength="400" placeholder="How do I identify a salvaged DC motor?" required>
       <p><button class="primary">Ask</button> <button type="button" id="clear-chat">Clear chat</button></p>
     </form>
+    <details><summary>Set up on-device AI on iPhone</summary>
+      <p>In Apple Shortcuts, make a shortcut named <strong>DISMIS Offline AI</strong>.
+      Open its Details, turn on <strong>Show in Share Sheet</strong>, and set it to receive text.
+      Add <strong>Use Model</strong>, select <strong>On-Device</strong>, and use the <strong>Shortcut Input</strong>
+      variable as its prompt. Add <strong>Show Content</strong> and select the model response.
+      Ask a question here, then tap <strong>Explain in iPhone Shortcuts</strong> on a guide result.</p>
+    </details>
     <p>Try <button type="button" data-example="How do I build an AM crystal radio?">Build a crystal radio</button>
       <button type="button" data-example="Can I use a toy motor for a bicycle generator?">Test a generator motor</button></p>
   </div><section id="field-walkthrough" aria-label="Guide walkthrough"></section>
@@ -103,7 +110,8 @@ function renderChat() {
               <figcaption>${escape(parts[part][0])} · Photo by <a href="${escape(photo.source)}">${escape(photo.author)}</a>
               · ${photo.licenseURL ? `<a href="${escape(photo.licenseURL)}">${escape(photo.license)}</a>` : escape(photo.license)} · resized</figcaption></figure>` : ''}
             ${entry.steps ? `<button type="button" data-walkthrough="${escape(entry.id)}">Walk through this guide</button>
-              <button type="button" data-guide="${escape(entry.id)}">Open source guide</button>` :
+              <button type="button" data-guide="${escape(entry.id)}">Open source guide</button>
+              <a class="iphone-shortcut" href="${escape(iphoneShortcutURL(question, entry))}">Explain in iPhone Shortcuts</a>` :
               `<button type="button" data-reference="${escape(entry.id)}">Open source reference</button>`}
           </section>`;
         }).join('') : '<p>I couldn’t find a close match in the saved library. Try naming the component, tool, or project.</p>'}

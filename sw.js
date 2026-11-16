@@ -1,7 +1,7 @@
 import { offlineAssets } from './offline-assets.js';
 
 const scope = self.registration.scope;
-const cacheName = `D.I.S.M.I.S./v3-preview-6-${scope}`;
+const cacheName = `D.I.S.M.I.S./v3-preview-7-${scope}`;
 const assets = new Set(offlineAssets.map(path => new URL(path, scope).href));
 
 self.addEventListener('install', event => {
