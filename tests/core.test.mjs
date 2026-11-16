@@ -59,19 +59,19 @@ test('Morse timeline differentiates character spacing, word spacing and the SOS 
 
 test('integration registry validates capability contracts and isolates providers', () => {
   const registry = createIntegrations();
-  const mock = { status: () => 'ready', answer: () => 'local answer' };
-  assert.equal(registry.get('localAI'), null);
-  assert.throws(() => registry.register('localAI', { status() {} }), TypeError);
+  const mock = { status: () => 'ready', listDevices: () => ['sensor'], readTelemetry: () => ({}) };
+  assert.equal(registry.get('hardware'), null);
+  assert.throws(() => registry.register('hardware', { status() {} }), TypeError);
   assert.throws(() => registry.register('toString', mock), TypeError);
-  const unregister = registry.register('localAI', mock);
-  assert.equal(registry.get('localAI').answer(), 'local answer');
-  assert.throws(() => registry.register('localAI', mock));
+  const unregister = registry.register('hardware', mock);
+  assert.deepEqual(registry.get('hardware').listDevices(), ['sensor']);
+  assert.throws(() => registry.register('hardware', mock));
   assert.equal(registry.get('meshtastic'), null);
   unregister();
   const latest = { ...mock };
-  registry.register('localAI', latest);
+  registry.register('hardware', latest);
   unregister();
-  assert.equal(registry.get('localAI'), latest);
+  assert.equal(registry.get('hardware'), latest);
 });
 
 test('receiver runtime uses measured usable energy and rejects invalid loads', () => {
@@ -111,17 +111,4 @@ test('field chat ranks bundled projects and returns no answer for unrelated ques
   assert.equal(search('How do I identify a salvaged DC motor?')[0].part, 'motor');
   assert.deepEqual(search('Who invented croissants?'), []);
   assert.ok(offlineAssets.includes('./field-chat.js'));
-});
-
-test('iPhone handoff encodes the selected guide and question into a local Shortcuts URL', async () => {
-  const { iphoneShortcutURL } = await import('../field-chat.js');
-  const guide = guides.find(entry => entry.id === 'radio-crystal-loop');
-  const question = 'Which end is + & where does it go?';
-  const url = new URL(iphoneShortcutURL(question, guide));
-  assert.equal(url.protocol, 'shortcuts:');
-  assert.equal(url.hostname, 'run-shortcut');
-  assert.equal(url.searchParams.get('name'), 'DISMIS Offline AI');
-  assert.equal(url.searchParams.get('input'), 'text');
-  assert.ok(url.searchParams.get('text').includes(question));
-  assert.ok(url.searchParams.get('text').includes(guide.steps[0]));
 });

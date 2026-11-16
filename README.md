@@ -1,8 +1,8 @@
-# D.I.S.M.I.S. Field Workshop V3 preview
+# D.I.S.M.I.S. Field Workshop V3
 
-An offline-first progressive web app for field survival, engineering, and communications. The preview runs on a static HTTP server with no account, backend, or app dependencies.
+An offline-first progressive web app for field survival, engineering, and communications. The app runs on a static HTTP server with no account, backend, or app dependencies.
 
-## Run the preview locally
+## Run the app locally
 
 From the repository root:
 
@@ -20,7 +20,7 @@ node --test
 
 ## Included
 
-- Ask the Field Guide searches saved material from a chat interface, links to sources, shows relevant parts photos, and walks through one saved step at a time. It uses local text matching. Generative AI, voice and photo understanding require a future provider.
+- Ask the Field Guide searches saved material from a chat interface, links to sources, shows relevant parts photos, and walks through one saved step at a time. It uses local text matching.
 - 23 searchable field guides with category filters and step progress. New communications material covers a battery-free AM loop receiver, a regulated hand-crank listening kit, a walkie-talkie check-in drill, and NOAA Weather Radio setup.
 - Ten searchable, bundled technical references with related guides and source links. Summaries and the receiver-runtime estimator work offline. External source pages require internet.
 - Morse encoding and decoding, adjustable-speed audio, a character chart, and randomized listening drills. Audio stays on the device.
@@ -33,7 +33,6 @@ node --test
 
 | Provider | Required methods | Planned use |
 | --- | --- | --- |
-| `localAI` | `status`, `answer` | Answer from bundled guide and reference context using a user-configured on-device runtime |
 | `meshtastic` | `status`, `listNodes`, `onMessage`, `sendText` | Pair supported LoRa hardware, stage messages, and report delivery status where available |
 | `hardware` | `status`, `listDevices`, `readTelemetry` | Read telemetry from available D.I.S.M.I.S. devices through a separately implemented transport |
 

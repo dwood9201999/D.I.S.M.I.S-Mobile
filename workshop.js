@@ -17,7 +17,6 @@ export function searchCatalog(entries, query, category = 'all') {
 
 /** Transport boundaries reserved for real, separately installed providers. */
 export const integrationContracts = Object.freeze({
-  localAI: Object.freeze(['status', 'answer']),
   meshtastic: Object.freeze(['status', 'listNodes', 'onMessage', 'sendText']),
   hardware: Object.freeze(['status', 'listDevices', 'readTelemetry']),
 });
