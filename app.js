@@ -1,3 +1,5 @@
+import { electrical, parts } from './electrical.js';
+import { drawPart } from './component-art.js';
 import { searchCatalog, receiverRuntime, createIntegrations } from './workshop.js';
 import { installOffline } from './offline-assets.js';
 
@@ -132,6 +134,27 @@ function renderCatalog(view) {
   update();
 }
 
+function renderElectrical(guideId) {
+  const entry = electrical[guideId];
+  if (!entry) return '';
+  return `<section aria-label="Electrical build notes">
+    <h3>Recognize the components</h3>
+    <p class="muted">Illustrations show typical shapes. Check labels and model drawings before making a connection.</p>
+    <div class="part-grid">${entry.parts.map(id => {
+      const [name, appearance, source, verify] = parts[id];
+      return `<article class="part"><canvas width="200" height="94" data-part="${id}" aria-hidden="true"></canvas>
+        <h4>${escape(name)}</h4><p>${escape(appearance)}</p>
+        <p><strong>Where to find it.</strong> ${escape(source)}</p>
+        <p><strong>How to identify or check it.</strong> ${escape(verify)}</p></article>`;
+    }).join('')}</div>
+    ${entry.wiring.length ? `<h3>Connection map</h3><ol>${entry.wiring.map(([from, to, how]) =>
+      `<li class="wire"><strong>${escape(from)} → ${escape(to)}</strong><p>${escape(how)}</p></li>`
+    ).join('')}</ol>` : ''}
+    <h3>Verify the setup</h3><p>${escape(entry.checks)}</p>
+    ${sourceList([{title: 'Fluke · Measuring DC voltage', url: 'https://www.fluke.com/en-ie/learn/blog/digital-multimeters/how-to-measure-dc-voltage-with-a-digital-multimeter'}].filter(() => entry.parts.includes('meter')))}
+  </section>`;
+}
+
 function renderGuide(guide) {
   const progressKey = 'progress-' + guide.id + (guide.revision ? '-r' + guide.revision : '');
   const progress = load(progressKey, {});
@@ -141,6 +164,7 @@ function renderGuide(guide) {
     <p class="warn">${escape(guide.warning)}</p>
     <h3>Materials and tools</h3>
     ${guide.materials.map(item => `<label class="check"><input type="checkbox"><span>${escape(item)}</span></label>`).join('')}
+    ${renderElectrical(guide.id)}
     <h3>Steps</h3>
     <p id="count" role="status" class="muted"></p><progress id="bar" max="${guide.steps.length}"></progress>
     ${guide.steps.map((step, i) => `<label class="step check"><input type="checkbox" data-step="${i}" ${progress[i] ? 'checked' : ''}>
@@ -148,6 +172,7 @@ function renderGuide(guide) {
     ${sourceList(guide.sources)}
     <p id="progress-status" role="status" class="muted"></p>
     <button id="reset">Reset progress</button></article>`;
+  for (const canvas of main.querySelectorAll('[data-part]')) drawPart(canvas, canvas.dataset.part);
   function update() {
     const count = guide.steps.filter((_, index) => progress[index]).length;
     status('count', `${count} of ${guide.steps.length} steps completed`);

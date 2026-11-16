@@ -80,3 +80,18 @@ test('receiver runtime uses measured usable energy and rejects invalid loads', (
   assert.equal(receiverRuntime(10, 5, 0), null);
   assert.equal(receiverRuntime(Infinity, 5, 0.2), null);
 });
+
+test('all communications and electrical guides have offline part-identification material', async () => {
+  const { electrical, parts } = await import('../electrical.js');
+  for (const guide of guides.filter(guide => guide.cat === 'radio' || ['g10', 'g11', 'g12', 'g19'].includes(guide.id))) {
+    const entry = electrical[guide.id];
+    assert.ok(entry?.parts.length && entry.checks, guide.id);
+    for (const id of entry.parts) {
+      assert.equal(parts[id]?.length, 4, id);
+      assert.ok(parts[id].every(Boolean));
+    }
+    for (const connection of entry.wiring) assert.equal(connection.length, 3);
+  }
+  assert.ok(offlineAssets.includes('./electrical.js'));
+  assert.ok(offlineAssets.includes('./component-art.js'));
+});

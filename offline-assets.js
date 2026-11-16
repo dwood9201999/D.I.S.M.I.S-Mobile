@@ -1,5 +1,5 @@
 export const offlineAssets = Object.freeze([
-  './', './index.html', './styles.css', './app.js', './workshop.js',
+  './', './index.html', './styles.css', './app.js', './workshop.js', './electrical.js', './component-art.js',
   './offline-assets.js', './guides.json', './references.json', './morse.html',
   './morse.js', './morse-core.js', './icon.svg', './manifest.webmanifest',
 ]);
