@@ -19,7 +19,13 @@
       "For clear water, bring to a rolling boil for 1 minute; above 6,500 feet elevation, boil for 3 minutes. Allow to cool naturally.",
       "Store in a clean, covered container without touching the inside of the lid or opening."
     ],
-    "warning": "Boiling kills many disease-causing organisms but does not remove dissolved chemicals, heavy metals, or salt. A homemade sand/charcoal filter is not a validated purifier. If fuel is unavailable, use only a disinfectant specifically labeled for drinking-water treatment and follow its instructions."
+    "warning": "Boiling kills many disease-causing organisms but does not remove dissolved chemicals, heavy metals, or salt. A homemade sand/charcoal filter is not a validated purifier. If fuel is unavailable, use only a disinfectant specifically labeled for drinking-water treatment and follow its instructions.",
+    "sources": [
+      {
+        "title": "CDC · Make water safe in an emergency",
+        "url": "https://www.cdc.gov/water-emergency/about/index.html"
+      }
+    ]
   },
   {
     "id": "g2",
@@ -156,22 +162,28 @@
     "id": "g8",
     "cat": "heat",
     "category": "Heating",
-    "title": "Evaluate a candle-and-metal heat diffuser",
+    "title": "Plan emergency warmth without a DIY heater",
     "level": "Beginner",
-    "overview": "A candle diffuser does not multiply heat; it only changes how heat is distributed.",
+    "overview": "Use dry layers, ground insulation and a safe alternate location when regular heat fails.",
     "materials": [
-      "Candle",
-      "Stable nonflammable base",
-      "Metal container (for demonstration only)",
-      "Thermometer if available"
+      "Dry layered clothing and blankets",
+      "Insulating sleeping pads",
+      "Battery-powered flashlight",
+      "A plan for a heated alternate location"
     ],
     "steps": [
-      "Estimate whether insulation and warmer clothing can meet the need without combustion.",
-      "If studying the concept, observe how metal becomes hot near a candle in a controlled, ventilated demonstration.",
-      "Compare temperature changes at a safe distance; do not touch hot metal.",
-      "Extinguish the candle before leaving the area."
+      "Check which indoor room can be kept warmest. Gather the people, dry clothing and bedding in that room.",
+      "Add insulating layers below and above sleepers. Replace wet clothes and check periodically on anyone especially vulnerable to cold.",
+      "Use a battery-powered light if electricity is out. Keep an evacuation option ready if you cannot maintain safe warmth."
     ],
-    "warning": "Do not use DIY candle heaters inside tents, small shelters, or while sleeping. Open flames, tipping, hot surfaces, oxygen depletion, and carbon monoxide are serious risks. Never seal a burning candle inside a container."
+    "warning": "Keep candles, outdoor fuel-burning stoves, grills, and generators out of occupied shelters. Never heat a room with a gas oven or use a homemade candle heater. Suspected hypothermia is a medical emergency.",
+    "revision": 2,
+    "sources": [
+      {
+        "title": "CDC · Winter storm safety",
+        "url": "https://www.cdc.gov/winter-weather/safety/stay-safe-during-after-a-winter-storm-safety.html"
+      }
+    ]
   },
   {
     "id": "g9",
@@ -193,7 +205,13 @@
       "Use a properly sealed warm—not scalding—water bottle wrapped in fabric if available.",
       "Monitor for shivering, confusion, clumsiness, or worsening cold stress."
     ],
-    "warning": "Suspected hypothermia is an emergency. Do not apply direct high heat to numb skin or give oral fluids to someone unable to swallow safely."
+    "warning": "Suspected hypothermia is an emergency. Do not apply direct high heat to numb skin or give oral fluids to someone unable to swallow safely.",
+    "sources": [
+      {
+        "title": "CDC · Winter storm safety",
+        "url": "https://www.cdc.gov/winter-weather/safety/stay-safe-during-after-a-winter-storm-safety.html"
+      }
+    ]
   },
   {
     "id": "g10",
@@ -540,12 +558,12 @@
     "warning": "U.S. guidance. Tone codes filter received audio and do not create privacy. Keep sensitive details off shared channels. For emergencies use 911 when reachable. Do not assume anyone monitors your channel.",
     "sources": [
       {
-        "title": "FCC · Family Radio Service",
-        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/family-radio-service-frs"
+        "title": "47 CFR § 95.305 · Personal Radio Services authorization",
+        "url": "https://www.law.cornell.edu/cfr/text/47/95.305"
       },
       {
-        "title": "FCC · General Mobile Radio Service",
-        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/general-mobile-radio-service-gmrs"
+        "title": "47 CFR § 95.1705 · GMRS licensing",
+        "url": "https://www.law.cornell.edu/cfr/text/47/95.1705"
       }
     ]
   },

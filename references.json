@@ -50,12 +50,12 @@
     "guide": "radio-walkie-talkies",
     "sources": [
       {
-        "title": "FCC · Family Radio Service",
-        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/family-radio-service-frs"
+        "title": "47 CFR § 95.305 · Personal Radio Services authorization",
+        "url": "https://www.law.cornell.edu/cfr/text/47/95.305"
       },
       {
-        "title": "FCC · General Mobile Radio Service",
-        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/general-mobile-radio-service-gmrs"
+        "title": "47 CFR § 95.1705 · GMRS licensing",
+        "url": "https://www.law.cornell.edu/cfr/text/47/95.1705"
       }
     ]
   },
@@ -176,5 +176,76 @@
     ],
     "guide": "radio-walkie-talkies",
     "sources": []
+  },
+  {
+    "id": "battery-load-log",
+    "cat": "power",
+    "category": "Power",
+    "title": "Low-voltage receiver bench log",
+    "overview": "Keep repeatable records when comparing receivers and USB power sources.",
+    "keywords": [
+      "multimeter",
+      "USB meter",
+      "voltage sag",
+      "benchmark",
+      "reboot"
+    ],
+    "points": [
+      "For a USB-powered receiver, use a compatible inline meter. Log voltage and current during startup, standby and playback at a fixed volume.",
+      "If the receiver resets, check the meter, cable, source rating and manual before changing components. Record temperature and test duration.",
+      "Use actual runtime at the intended settings to verify any estimate."
+    ],
+    "guide": "radio-crank-kit",
+    "sources": []
+  },
+  {
+    "id": "water-treatment-matrix",
+    "cat": "water",
+    "category": "Water",
+    "title": "Emergency water treatment limits",
+    "overview": "First decide whether the source may contain fuel, chemicals or radioactive material.",
+    "keywords": [
+      "boil",
+      "disinfection",
+      "filtration",
+      "6500 feet",
+      "freshwater"
+    ],
+    "points": [
+      "Use another source when chemical or radioactive contamination is suspected. Boiling or disinfecting does not make that water safe.",
+      "For water that can be made safe by boiling, the CDC recommends a rolling boil for 1 minute, or 3 minutes above 6,500 feet. Filter visibly cloudy water through clean cloth or allow it to settle first."
+    ],
+    "guide": "g1",
+    "sources": [
+      {
+        "title": "CDC · Make water safe in an emergency",
+        "url": "https://www.cdc.gov/water-emergency/about/index.html"
+      }
+    ]
+  },
+  {
+    "id": "cold-weather-power",
+    "cat": "shelter",
+    "category": "Shelter",
+    "title": "Cold-weather heat and carbon monoxide",
+    "overview": "Plan warmth and backup power before a winter outage.",
+    "keywords": [
+      "winter storm",
+      "generator",
+      "CO",
+      "cold",
+      "insulation"
+    ],
+    "points": [
+      "Use dry layers and blankets and check on household members regularly. Prepare an alternate heated location.",
+      "Run portable generators outside at least 20 feet from windows, doors and vents, and follow the manufacturer’s instructions."
+    ],
+    "guide": "g8",
+    "sources": [
+      {
+        "title": "CDC · Winter storm safety",
+        "url": "https://www.cdc.gov/winter-weather/safety/stay-safe-during-after-a-winter-storm-safety.html"
+      }
+    ]
   }
 ]

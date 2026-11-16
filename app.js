@@ -1,4 +1,4 @@
-import { searchCatalog, createIntegrations } from './workshop.js';
+import { searchCatalog, receiverRuntime, createIntegrations } from './workshop.js';
 import { installOffline } from './offline-assets.js';
 
 const main = document.querySelector('#main');
@@ -71,6 +71,20 @@ function render() {
   renderCatalog(activeView);
 }
 
+function runtimeCalculator() {
+  return `<form id="runtime" class="card">
+    <h2>Receiver runtime estimate</h2>
+    <p>Use usable energy measured at the output, and voltage and current measured while listening.</p>
+    <div class="row">
+      <label>Usable watt-hours<input name="energy" type="number" min="0" step="any" required></label>
+      <label>Voltage (V)<input name="voltage" type="number" min="0" step="any" required></label>
+      <label>Current (A)<input name="current" type="number" min="0" step="any" required></label>
+    </div>
+    <button>Estimate runtime</button>
+    <p><output id="runtime-result" form="runtime" aria-live="polite"></output></p>
+  </form>`;
+}
+
 function renderCatalog(view) {
   const entries = catalog[view];
   const state = tabs[view];
@@ -85,7 +99,17 @@ function renderCatalog(view) {
       ${[...categories].map(([key, label]) => `<option value="${escape(key)}">${escape(label)}</option>`).join('')}
     </select>
     <p id="result-count" role="status" class="muted"></p>
-  </div><div id="results"></div>`;
+  </div><div id="results"></div>${isGuide ? '' : runtimeCalculator()}`;
+  if (!isGuide) byId('runtime').onsubmit = event => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const read = key => form.elements.namedItem(key).valueAsNumber;
+    const result = receiverRuntime(read('energy'), read('voltage'), read('current'));
+    const format = new Intl.NumberFormat(undefined, { maximumSignificantDigits: 3 });
+    status('runtime-result', result ?
+      `${format.format(result.watts)} W load · About ${format.format(result.hours)} hours. Verify by timing a real run.` :
+      'Enter a positive finite value in each field.');
+  };
   const search = byId('search');
   const category = byId('category');
   search.value = state.query ?? '';
@@ -109,7 +133,7 @@ function renderCatalog(view) {
 }
 
 function renderGuide(guide) {
-  const progressKey = 'progress-' + guide.id;
+  const progressKey = 'progress-' + guide.id + (guide.revision ? '-r' + guide.revision : '');
   const progress = load(progressKey, {});
   main.innerHTML = `<button id="back" class="back">← Field Guide</button>
     <article class="card"><span class="pill">${escape(guide.category)} · ${escape(guide.level)}</span>

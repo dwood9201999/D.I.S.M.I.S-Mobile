@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, statSync } from 'node:fs';
 import { test } from 'node:test';
 
-import { searchCatalog, createIntegrations } from '../workshop.js';
+import { searchCatalog, receiverRuntime, createIntegrations } from '../workshop.js';
 import { audioTimeline, decode, encode } from '../morse-core.js';
 import { offlineAssets } from '../offline-assets.js';
 
@@ -72,4 +72,11 @@ test('integration registry validates capability contracts and isolates providers
   registry.register('localAI', latest);
   unregister();
   assert.equal(registry.get('localAI'), latest);
+});
+
+test('receiver runtime uses measured usable energy and rejects invalid loads', () => {
+  assert.deepEqual(receiverRuntime(10, 5, 0.2), { watts: 1, hours: 10 });
+  assert.deepEqual(receiverRuntime(10, 5, 0.5), { watts: 2.5, hours: 4 });
+  assert.equal(receiverRuntime(10, 5, 0), null);
+  assert.equal(receiverRuntime(Infinity, 5, 0.2), null);
 });

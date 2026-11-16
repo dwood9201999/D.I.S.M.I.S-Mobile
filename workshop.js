@@ -41,3 +41,11 @@ export function createIntegrations() {
     },
   });
 }
+
+export function receiverRuntime(wattHours, volts, amps) {
+  if (![wattHours, volts, amps].every(value => Number.isFinite(value) && value > 0)) return null;
+  const watts = volts * amps;
+  const hours = wattHours / watts;
+  if (!Number.isFinite(watts) || !Number.isFinite(hours) || hours <= 0) return null;
+  return { watts, hours };
+}
