@@ -37,7 +37,7 @@ const offlineAssets = [
 ];
 
 const scope = self.registration.scope;
-const cacheName = `D.I.S.M.I.S./v3-preview-10-${scope}`;
+const cacheName = `D.I.S.M.I.S./v3-preview-11-${scope}`;
 const assets = new Set(offlineAssets.map(path => new URL(path, scope).href));
 
 self.addEventListener('install', event => {

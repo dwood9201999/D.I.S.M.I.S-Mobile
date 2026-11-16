@@ -281,3 +281,21 @@ textarea {
   display: block;
   margin-top: 4px;
 }
+
+.morse-signal:not([hidden]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.signal-light {
+  width: 46px;
+  height: 32px;
+  border: 2px solid #a8c6a6;
+  border-radius: 7px;
+  background: #213a28;
+}
+
+.signal-light.is-lit {
+  background: #b8ef91;
+}
