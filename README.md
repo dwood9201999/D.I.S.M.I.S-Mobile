@@ -20,6 +20,7 @@ node --test
 
 ## Included
 
+- Ask the Field Guide searches saved material from a chat interface, links to sources, shows relevant parts photos, and walks through one saved step at a time. It uses local text matching. Generative AI, voice and photo understanding require a future provider.
 - 23 searchable field guides with category filters and step progress. New communications material covers a battery-free AM loop receiver, a regulated hand-crank listening kit, a walkie-talkie check-in drill, and NOAA Weather Radio setup.
 - Ten searchable, bundled technical references with related guides and source links. Summaries and the receiver-runtime estimator work offline. External source pages require internet.
 - Morse encoding and decoding, adjustable-speed audio, a character chart, and randomized listening drills. Audio stays on the device.

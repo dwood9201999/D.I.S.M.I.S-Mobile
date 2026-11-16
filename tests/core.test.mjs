@@ -101,3 +101,14 @@ test('all communications and electrical guides have offline part-identification 
     assert.ok(offlineAssets.includes(photo.path), id);
   }
 });
+
+test('field chat ranks bundled projects and returns no answer for unrelated questions', async () => {
+  const { findFieldAnswers } = await import('../field-chat.js');
+  const { electrical, parts } = await import('../electrical.js');
+  const search = question => findFieldAnswers({ guides, references }, question, electrical, parts);
+  assert.equal(search('Can I use a toy motor for a bicycle generator?')[0].entry.id, 'g11');
+  assert.equal(search('How do I build an AM crystal radio?')[0].entry.id, 'radio-crystal-loop');
+  assert.equal(search('How do I identify a salvaged DC motor?')[0].part, 'motor');
+  assert.deepEqual(search('Who invented croissants?'), []);
+  assert.ok(offlineAssets.includes('./field-chat.js'));
+});

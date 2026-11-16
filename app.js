@@ -1,3 +1,4 @@
+import { findFieldAnswers } from './field-chat.js';
 import { electrical, parts } from './electrical.js';
 import { componentPhotos } from './component-photos.js';
 import { searchCatalog, receiverRuntime, createIntegrations } from './workshop.js';
@@ -16,6 +17,8 @@ let guideId = null;
 let catalog = { guides: [], references: [] };
 let catalogLoad;
 let notesDraft;
+const conversation = [];
+let walkthrough;
 
 function load(key, fallback) {
   try {
@@ -68,9 +71,112 @@ function render() {
     main.innerHTML = '<p role="status">Loading guide library…</p>';
     return;
   }
+  if (activeView === 'chat') return renderChat();
   const selected = catalog.guides.find(guide => guide.id === guideId);
   if (activeView === 'guides' && selected) return renderGuide(selected);
   renderCatalog(activeView);
+}
+
+function renderChat() {
+  main.innerHTML = `<div class="card">
+    <h2 tabindex="-1">Ask the Field Guide</h2>
+    <p>Find answers in the saved guides and references. Questions stay on this device and clear when you reload. Responses quote the library.</p>
+    <form id="field-question">
+      <label for="question">Your question</label>
+      <input id="question" maxlength="400" placeholder="How do I identify a salvaged DC motor?" required>
+      <p><button class="primary">Ask</button> <button type="button" id="clear-chat">Clear chat</button></p>
+    </form>
+    <p>Try <button type="button" data-example="How do I build an AM crystal radio?">Build a crystal radio</button>
+      <button type="button" data-example="Can I use a toy motor for a bicycle generator?">Test a generator motor</button></p>
+  </div><section id="field-walkthrough" aria-label="Guide walkthrough"></section>
+  <section id="field-answers" aria-label="Recent questions" aria-live="polite"></section>`;
+
+  function showAnswers() {
+    byId('field-answers').innerHTML = [...conversation].reverse().map(({ question, matches }) =>
+      `<article class="card"><h3>${escape(question)}</h3>
+        ${matches.length ? matches.map(({ entry, part }) => {
+          const photo = componentPhotos[part];
+          return `<section class="chat-match">
+            <h4>${escape(entry.title)}</h4><p>${escape(entry.overview)}</p>
+            ${entry.points ? `<p>${escape(entry.points[0])}</p>` : ''}
+            ${photo ? `<figure class="chat-photo"><img src="${escape(photo.path)}" alt="${escape(photo.caption)}">
+              <figcaption>${escape(parts[part][0])} · Photo by <a href="${escape(photo.source)}">${escape(photo.author)}</a>
+              · ${photo.licenseURL ? `<a href="${escape(photo.licenseURL)}">${escape(photo.license)}</a>` : escape(photo.license)} · resized</figcaption></figure>` : ''}
+            ${entry.steps ? `<button type="button" data-walkthrough="${escape(entry.id)}">Walk through this guide</button>
+              <button type="button" data-guide="${escape(entry.id)}">Open source guide</button>` :
+              `<button type="button" data-reference="${escape(entry.id)}">Open source reference</button>`}
+          </section>`;
+        }).join('') : '<p>I couldn’t find a close match in the saved library. Try naming the component, tool, or project.</p>'}
+      </article>`).join('');
+  }
+
+  function ask(question) {
+    question = question.trim();
+    if (!question) return;
+    const matches = findFieldAnswers(catalog, question, electrical, parts);
+    conversation.push({ question, matches });
+    if (conversation.length > 8) conversation.shift();
+    byId('question').value = '';
+    showAnswers();
+  }
+  byId('field-question').onsubmit = event => {
+    event.preventDefault();
+    ask(byId('question').value);
+  };
+  byId('clear-chat').onclick = () => {
+    conversation.length = 0;
+    walkthrough = null;
+    renderChat();
+    byId('question').focus();
+  };
+  for (const button of main.querySelectorAll('[data-example]')) {
+    button.onclick = () => ask(button.dataset.example);
+  }
+  byId('field-answers').onclick = event => {
+    const button = event.target.closest('[data-walkthrough], [data-reference]');
+    if (!button) return;
+    if (button.dataset.reference) {
+      const entry = catalog.references.find(reference => reference.id === button.dataset.reference);
+      tabs.references.query = entry.title;
+      tabs.references.category = entry.cat;
+      show('references', null, true);
+      return;
+    }
+    walkthrough = { guide: catalog.guides.find(guide => guide.id === button.dataset.walkthrough), step: 0 };
+    showWalkthrough(true);
+  };
+  showAnswers();
+  showWalkthrough();
+}
+
+function showWalkthrough(focus = false) {
+  const panel = byId('field-walkthrough');
+  if (!walkthrough) return;
+  const { guide, step } = walkthrough;
+  panel.innerHTML = `<article class="card">
+    <h3 tabindex="-1">${escape(guide.title)}</h3>
+    <p class="warn">${escape(guide.warning)}</p>
+    <p><strong>Step ${step + 1} of ${guide.steps.length}</strong></p>
+    <p>${escape(guide.steps[step])}</p>
+    <div class="row">
+      <button type="button" id="walk-prev" ${step === 0 ? 'disabled' : ''}>Previous step</button>
+      <button type="button" id="walk-next" ${step + 1 === guide.steps.length ? 'disabled' : ''}>Next step</button>
+      <button type="button" data-guide="${escape(guide.id)}">Open full guide</button>
+      <button type="button" id="walk-close">Close walkthrough</button>
+    </div>
+  </article>`;
+  function move(amount) {
+    walkthrough.step += amount;
+    showWalkthrough(true);
+  }
+  byId('walk-prev').onclick = () => move(-1);
+  byId('walk-next').onclick = () => move(1);
+  byId('walk-close').onclick = () => {
+    walkthrough = null;
+    panel.textContent = '';
+    byId('question').focus();
+  };
+  if (focus) panel.querySelector('h3').focus();
 }
 
 function runtimeCalculator() {
@@ -308,7 +414,7 @@ async function loadCatalog() {
   } catch {
     catalogLoad = 'error';
   }
-  if (activeView === 'guides' || activeView === 'references') render();
+  if (['guides', 'references', 'chat'].includes(activeView)) render();
 }
 
 nav.addEventListener('click', event => {
