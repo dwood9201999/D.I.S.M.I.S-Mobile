@@ -1,6 +1,6 @@
 import { findFieldAnswers } from './field-chat.js';
 import { electrical, parts } from './electrical.js';
-import { componentPhotos } from './component-photos.js';
+import { componentPhotos, fermentationPhotos } from './component-photos.js';
 import { searchCatalog, receiverRuntime, createIntegrations } from './workshop.js';
 import { installOffline } from './offline-assets.js';
 
@@ -255,6 +255,29 @@ function renderCatalog(view) {
   update();
 }
 
+function renderMaterialPhoto(name, photo) {
+  return photo ? `<figure class="part-photo">
+          <a href="${escape(photo.path)}" target="_blank" rel="noopener" aria-label="Open full photo of ${escape(name)}">
+            <img src="${escape(photo.path)}" alt="${escape(photo.caption)}" loading="lazy">
+          </a>
+          <figcaption>${escape(photo.caption)}
+            <details><summary>Photo credit</summary>
+              <a href="${escape(photo.source)}">${escape(photo.title)}</a> by ${escape(photo.author)} ·
+              ${photo.licenseURL ? `<a href="${escape(photo.licenseURL)}">${escape(photo.license)}</a>` : escape(photo.license)} · resized
+            </details>
+          </figcaption>
+        </figure>` : '<p class="muted">Reference photo pending.</p>';
+}
+
+function renderFermentationPhotos() {
+  return `<section aria-label="Fermentation materials">
+    <h3>What the materials look like</h3>
+    <div class="part-grid">${fermentationPhotos.map(photo => `<article class="part">
+      <h4>${escape(photo.name)}</h4>${renderMaterialPhoto(photo.name, photo)}
+    </article>`).join('')}</div>
+  </section>`;
+}
+
 function renderElectrical(guideId) {
   const entry = electrical[guideId];
   if (!entry) return '';
@@ -266,17 +289,7 @@ function renderElectrical(guideId) {
       const photo = componentPhotos[id];
       return `<article class="part">
         <h4>${escape(name)}</h4>
-        ${photo ? `<figure class="part-photo">
-          <a href="${escape(photo.path)}" target="_blank" rel="noopener" aria-label="Open full photo of ${escape(name)}">
-            <img src="${escape(photo.path)}" alt="${escape(photo.caption)}" loading="lazy">
-          </a>
-          <figcaption>${escape(photo.caption)}
-            <details><summary>Photo credit</summary>
-              <a href="${escape(photo.source)}">${escape(photo.title)}</a> by ${escape(photo.author)} ·
-              ${photo.licenseURL ? `<a href="${escape(photo.licenseURL)}">${escape(photo.license)}</a>` : escape(photo.license)} · resized
-            </details>
-          </figcaption>
-        </figure>` : '<p class="muted">Reference photo pending.</p>'}
+        ${renderMaterialPhoto(name, photo)}
         <p>${escape(appearance)}</p>
         <p><strong>Common donor items and salvage sources.</strong> ${escape(source)}</p>
         <p><strong>How to identify or check it.</strong> ${escape(verify)}</p></article>`;
@@ -299,6 +312,7 @@ function renderGuide(guide) {
     <h3>Materials and tools</h3>
     ${guide.materials.map(item => `<label class="check"><input type="checkbox"><span>${escape(item)}</span></label>`).join('')}
     ${renderElectrical(guide.id)}
+    ${guide.id === 'food-ferment-fruit' ? renderFermentationPhotos() : ''}
     <h3>Steps</h3>
     <p id="count" role="status" class="muted"></p><progress id="bar" max="${guide.steps.length}"></progress>
     ${guide.steps.map((step, i) => `<label class="step check"><input type="checkbox" data-step="${i}" ${progress[i] ? 'checked' : ''}>

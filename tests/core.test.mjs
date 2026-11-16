@@ -126,3 +126,12 @@ test('Morse course covers all 50 levels with encodable answers', async () => {
   assert.equal(normalizeAnswer('  radio   check '), 'RADIO CHECK');
   assert.ok(offlineAssets.includes('./morse-course.js'));
 });
+
+test('fermentation reference photos are credited and cached for offline use', async () => {
+  const { fermentationPhotos } = await import('../component-photos.js');
+  assert.equal(fermentationPhotos.length, 7);
+  for (const photo of fermentationPhotos) {
+    assert.ok(photo.name && photo.caption && photo.author && photo.licenseURL);
+    assert.ok(offlineAssets.includes(photo.path), photo.name);
+  }
+});

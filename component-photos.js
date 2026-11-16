@@ -162,3 +162,76 @@ export const componentPhotos = {
     "caption": "Motorola Talkabout handheld radios showing the antenna, front display and speaker grille."
   }
 };
+
+export const fermentationPhotos = [
+  {
+    "path": "./photos/ferment-apples-grapes.webp",
+    "title": "Apple and grapes.jpg",
+    "author": "Jessieagudo",
+    "license": "CC BY-SA 3.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Apple_and_grapes.jpg",
+    "name": "Apples and grapes",
+    "caption": "Apples for cider and grapes for wine. Use positively identified edible fruit in sound condition."
+  },
+  {
+    "path": "./photos/ferment-apples-pears.webp",
+    "title": "Pears & Apples.jpg",
+    "author": "Dimitar Nikolov from Sofia, Bulgaria",
+    "license": "CC BY 2.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Pears_%26_Apples.jpg",
+    "name": "Pears for perry",
+    "caption": "The green, tapered fruit in front are pears. Choose intact pears for perry."
+  },
+  {
+    "path": "./photos/ferment-press.webp",
+    "title": "Using a press to make apple cider - assembled press.jpg",
+    "author": "Neutron jf",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Using_a_press_to_make_apple_cider_-_assembled_press.jpg",
+    "name": "Fruit press",
+    "caption": "A basket press squeezes juice from crushed fruit. Look for a slatted basket, pressing plate, and a collection tray or spout."
+  },
+  {
+    "path": "./photos/ferment-vessel.webp",
+    "title": "CarboyHomebrew.jpg",
+    "author": "Joshk at en.wikipedia",
+    "license": "CC BY-SA 2.5",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/2.5/",
+    "source": "https://commons.wikimedia.org/wiki/File:CarboyHomebrew.jpg",
+    "name": "Food-grade fermenter",
+    "caption": "This example is a glass carboy with an airlock at the top. A food-grade fermentation bucket with a fitted airlock also works."
+  },
+  {
+    "path": "./photos/ferment-airlock.webp",
+    "title": "Fermentation bungs and airlocks.jpg",
+    "author": "Agne27",
+    "license": "CC BY-SA 3.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Fermentation_bungs_and_airlocks.jpg",
+    "name": "Fermentation airlock and stopper",
+    "caption": "Look for a clear airlock and a food-grade stopper that fits the opening. The airlock vents gas while limiting outside exposure."
+  },
+  {
+    "path": "./photos/ferment-hydrometer.webp",
+    "title": "WortHydrometer.JPG",
+    "author": "Schlemazl",
+    "license": "CC BY-SA 3.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:WortHydrometer.JPG",
+    "name": "Brewing hydrometer",
+    "caption": "Look for a weighted glass float with a numbered specific-gravity scale and a tall sample cylinder. This photo is for identification. Read yours according to its instructions."
+  },
+  {
+    "path": "./photos/ferment-juice.webp",
+    "title": "Apple juice glass.jpg",
+    "author": "JeanBono",
+    "license": "CC BY 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Apple_juice_glass.jpg",
+    "name": "Apple juice for the optional controlled batch",
+    "caption": "Apple juice is the base for the optional batch using brewing yeast. Check the package for pasteurization. Appearance cannot tell you whether juice is pasteurized."
+  }
+];

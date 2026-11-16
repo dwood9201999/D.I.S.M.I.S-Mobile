@@ -30,6 +30,13 @@ const offlineAssets = [
   "./photos/fuse.webp",
   "./photos/turbine.webp",
   "./photos/handheld.webp",
+  "./photos/ferment-apples-grapes.webp",
+  "./photos/ferment-apples-pears.webp",
+  "./photos/ferment-press.webp",
+  "./photos/ferment-vessel.webp",
+  "./photos/ferment-airlock.webp",
+  "./photos/ferment-hydrometer.webp",
+  "./photos/ferment-juice.webp",
   "./morse.js",
   "./morse-core.js",
   "./morse-course.js",
@@ -38,7 +45,7 @@ const offlineAssets = [
 ];
 
 const scope = self.registration.scope;
-const cacheName = `D.I.S.M.I.S./v3-preview-14-${scope}`;
+const cacheName = `D.I.S.M.I.S./v3-preview-15-${scope}`;
 const assets = new Set(offlineAssets.map(path => new URL(path, scope).href));
 
 self.addEventListener('install', event => {
