@@ -602,5 +602,381 @@
         "url": "https://www.weather.gov/dsb/nwr_receivers"
       }
     ]
+  },
+  {
+    "id": "prep-stay",
+    "cat": "preparedness",
+    "category": "Emergency Preparedness",
+    "title": "Bug in: shelter at home",
+    "overview": "Set up a home base for a multi-day disruption and decide in advance when to use your fallback location.",
+    "keywords": [
+      "bug in",
+      "shelter in place",
+      "household checklist"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Three days of water to start",
+      "Shelf-stable meals, manual can opener and pet supplies",
+      "Flashlights, radio, batteries and power banks",
+      "Prescriptions, first-aid supplies, blankets and hygiene supplies"
+    ],
+    "steps": [
+      "Pick the safest room for the actual hazard. Keep two usable exits and choose a backup destination.",
+      "Count people and pets. Store at least one gallon per person per day for three days, then build toward two weeks if space and budget allow. For a family of five that is 15 gallons for three days or 70 gallons for two weeks, plus pet water and any extra needs.",
+      "Put lights, shoes, gloves and the radio where everyone can find them. Make a paper list of who handles food, water, pets and check-ins.",
+      "Inventory your water, sanitation, food and medication daily. Keep clean and dirty supplies separate. Use up perishable supplies only while they stay within safe temperature limits.",
+      "Switch to the backup location if the building becomes unsafe, essential supplies run out or local authorities order evacuation."
+    ],
+    "warning": "Match the shelter to the hazard. A basement may suit fallout but can be dangerous in flooding.",
+    "sources": [
+      {
+        "title": "FEMA · Emergency kit",
+        "url": "https://www.ready.gov/kit"
+      },
+      {
+        "title": "CDC · Emergency water supply",
+        "url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html"
+      }
+    ]
+  },
+  {
+    "id": "prep-leave",
+    "cat": "preparedness",
+    "category": "Emergency Preparedness",
+    "title": "Bug out: evacuate with a family",
+    "overview": "Build a grab-and-go kit and rehearse two ways to reach a known destination.",
+    "keywords": [
+      "bug out",
+      "evacuate",
+      "go bag"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Backpack per adult",
+      "Water and ready-to-eat food",
+      "Paper map, contacts and documents in a waterproof bag",
+      "Charged phone and backup power",
+      "Prescription supplies, child essentials and pet carrier"
+    ],
+    "steps": [
+      "Write down a nearby meeting point and a second destination outside your area. Confirm the destination can take the household and pets.",
+      "Mark primary and alternate routes on paper. Agree on an out-of-area contact and give each adult a contact card.",
+      "Put medicine, IDs, spare keys, light and water near the top of bags. Give children contact cards and distribute the heaviest items among adults.",
+      "Do a timed load-out. Check car seats, pet restraints, fuel and whether adults can carry the gear on foot.",
+      "Take the safer verified route. Turn back from floodwater, fallen lines and blocked roads. Leave promptly if instructed to evacuate."
+    ],
+    "warning": "Take the people and pets first. A bag can be left behind if getting it would delay escape.",
+    "sources": [
+      {
+        "title": "FEMA · Emergency kit",
+        "url": "https://www.ready.gov/kit"
+      },
+      {
+        "title": "FEMA · Evacuation",
+        "url": "https://www.ready.gov/evacuation"
+      }
+    ]
+  },
+  {
+    "id": "prep-blackout",
+    "cat": "preparedness",
+    "category": "Emergency Preparedness",
+    "title": "Prolonged blackout: first hour to day three",
+    "overview": "Prioritize lighting, temperature, food and battery capacity during a prolonged outage.",
+    "keywords": [
+      "grid down",
+      "power outage",
+      "electricity",
+      "generator"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "LED headlamps and spare batteries",
+      "Battery weather radio, power banks and cables",
+      "Fridge thermometer and cooler",
+      "Dry layers and no-cook meals",
+      "Written backup plan for powered medical equipment"
+    ],
+    "steps": [
+      "Check for outages without touching damaged lines or electrical gear. Set out LED lights and check anyone dependent on powered devices.",
+      "Keep refrigerator and freezer doors closed. An unopened refrigerator holds safe temperature about four hours. A full unopened freezer holds about 48 hours, or 24 hours if half full.",
+      "Use battery power for communications and essential devices first. Schedule radio checks and keep a written charging log.",
+      "Set aside water and safe no-cook food. Move to a place with safe indoor temperatures if the home becomes dangerously hot or cold.",
+      "If using a portable generator, run it outdoors at least 20 feet from doors, windows and vents, with exhaust directed away. Use approved connections and working CO alarms."
+    ],
+    "warning": "Never run a generator, grill or camp stove inside a home, garage, tent or vehicle. Never feed power into a household outlet.",
+    "sources": [
+      {
+        "title": "FEMA · Power outage guide",
+        "url": "https://www.ready.gov/power-outages"
+      }
+    ]
+  },
+  {
+    "id": "prep-water",
+    "cat": "preparedness",
+    "category": "Emergency Preparedness",
+    "title": "Loss of water: drinking and sanitation",
+    "overview": "Protect safe drinking water first, then manage separate supplies for cleaning and waste.",
+    "keywords": [
+      "water outage",
+      "boil advisory",
+      "sanitation",
+      "sewer"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Sealed drinking water",
+      "Clean food-grade containers with lids",
+      "Soap, clean pouring container, gloves and waste bags",
+      "Pot and safe heat source"
+    ],
+    "steps": [
+      "Estimate remaining water in gallons and label containers potable or utility. Keep potable water for drinking, cooking and brushing teeth.",
+      "Use sealed bottled water first when tap water is questionable. Follow the specific water notice when available.",
+      "For water with suspected germs only, let cloudy water settle or strain it through clean cloth, then bring the clearer water to a rolling boil for one minute, or three minutes above 6,500 feet. Cool covered.",
+      "Use a separate utility-water container for cleaning. If sewer service is confirmed working, follow local guidance for flushing. If the sewer is out, stop flushing and use a designated lined portable toilet where available.",
+      "Keep waste away from food and water supplies, and wash hands after handling it. Do not pour waste into storm drains or waterways."
+    ],
+    "warning": "Boiling, filtering and disinfecting cannot make water contaminated by fuel, toxic chemicals or radioactive material safe to drink.",
+    "sources": [
+      {
+        "title": "CDC · Emergency water supply",
+        "url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html"
+      },
+      {
+        "title": "CDC · Make water safe",
+        "url": "https://www.cdc.gov/water-emergency/about/index.html"
+      }
+    ]
+  },
+  {
+    "id": "prep-offline",
+    "cat": "preparedness",
+    "category": "Emergency Preparedness",
+    "title": "Internet and phone network outage",
+    "overview": "Use paper records, local radio and a timed check-in plan when online services fail.",
+    "keywords": [
+      "loss of internet",
+      "communications",
+      "cell service",
+      "radio"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Paper contact cards and road map",
+      "Offline maps saved on each phone",
+      "Battery NOAA radio and chargers",
+      "Notebook and pencil"
+    ],
+    "steps": [
+      "Before an outage, write down addresses, rendezvous points, backup routes and an out-of-area contact.",
+      "Save maps and key guides, then test them with Wi-Fi and cellular disabled. Record local NOAA frequencies and AM/FM stations on paper.",
+      "Try a short text if cellular service is intermittent. Include your location, time and next check-in. If calls and texts fail, use the prearranged check-in or meeting plan.",
+      "Use receive-only radio for updates. If the household practices with walkie-talkies, agree on a channel, call signs, meeting point and a fallback if messages are missed.",
+      "Write down alert source and time. If two reports conflict, prioritize official local broadcasts when available."
+    ],
+    "warning": "Keep sensitive details off shared radio channels. Use ordinary weather and public-safety broadcasts for emergency updates.",
+    "sources": [
+      {
+        "title": "FEMA · Family communications plan",
+        "url": "https://www.ready.gov/plan"
+      },
+      {
+        "title": "FEMA · Emergency kit",
+        "url": "https://www.ready.gov/kit"
+      }
+    ]
+  },
+  {
+    "id": "prep-long-disruption",
+    "cat": "preparedness",
+    "category": "Emergency Preparedness",
+    "title": "Long-term disruption: a two-week rotation plan",
+    "overview": "Plan around water, sanitation, food, warmth, medication and reliable neighbors during a regional breakdown in supplies.",
+    "keywords": [
+      "collapse",
+      "civilization",
+      "supply chain",
+      "extended emergency"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Two-week shelf-stable menu",
+      "Water inventory and food-safe containers",
+      "Paper ledger, repair supplies, soap and waste bags",
+      "Manual tools, spare batteries and household supplies"
+    ],
+    "steps": [
+      "List per-day needs for each person and pet. Mark what becomes critical when stored water, medicine or safe heat runs low.",
+      "Build a three-day baseline first, then add one week at a time. Buy foods the household already eats and rotate the oldest supplies first.",
+      "Write a daily routine for clean water, waste, food, temperatures, rest and radio updates. Set a simple backup role for every task.",
+      "Check in with trusted neighbors. Agree on practical ways to share information, transport, repair skills or supplies without assuming an outside delivery.",
+      "Review the next three days each evening. Move early to a known safer location if basic water, warmth or sanitation can no longer be maintained."
+    ],
+    "warning": "Keep fuel and waste away from food and living spaces. Use only tested food preservation methods.",
+    "sources": [
+      {
+        "title": "FEMA · Emergency kit",
+        "url": "https://www.ready.gov/kit"
+      },
+      {
+        "title": "CDC · Emergency water supply",
+        "url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html"
+      }
+    ]
+  },
+  {
+    "id": "prep-fallout",
+    "cat": "preparedness",
+    "category": "Emergency Preparedness",
+    "title": "Nuclear explosion and fallout: shelter and first 24 hours",
+    "overview": "Use distance from outside surfaces and solid building materials for protection. Keep essential actions in a short checklist.",
+    "keywords": [
+      "nuclear war",
+      "nuke",
+      "radiation",
+      "fallout",
+      "blast"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Nearest sturdy building or basement",
+      "Sealed water and food",
+      "Battery radio",
+      "Change of clothing, soap and bags",
+      "Flashlight and essential medicines"
+    ],
+    "steps": [
+      "If you see a sudden intense flash, turn away, drop and cover exposed skin. After the shock wave passes, get into the nearest sturdy building as soon as possible.",
+      "Go to a basement or the middle of a large building, away from exterior walls, roof and windows. Close doors and windows and shut off systems that draw outside air if safe.",
+      "If you were outdoors, remove outer clothing carefully and place it in a bag away from people and pets. Wash exposed skin and hair gently with soap and water if available. Use a clean damp cloth on exposed skin if a shower is unavailable.",
+      "Use sealed water and food that were indoors. Use a battery radio for instructions. Stay sheltered for at least 24 hours unless officials give different instructions or an immediate danger like fire forces you to move.",
+      "If you must move, go promptly to the closest intact sturdy shelter. Recheck messages and supplies from the shelter interior."
+    ],
+    "warning": "Boiling does not remove radioactive material from water. Potassium iodide protects only the thyroid against radioactive iodine and should be taken only when public health or emergency officials direct it.",
+    "sources": [
+      {
+        "title": "CDC · Get inside",
+        "url": "https://www.cdc.gov/radiation-emergencies/response/get-inside.html"
+      },
+      {
+        "title": "FEMA · Nuclear explosion",
+        "url": "https://www.ready.gov/nuclear-explosion"
+      }
+    ]
+  },
+  {
+    "id": "field-kit",
+    "cat": "first-aid",
+    "category": "First Aid",
+    "title": "Make a field first-aid kit",
+    "overview": "Pack clean materials in labeled bags and practice finding them in the dark.",
+    "keywords": [
+      "makeshift",
+      "improvised",
+      "clean cloth",
+      "bleeding"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Waterproof bag",
+      "Nitrile gloves and hand cleaner",
+      "Sterile gauze, adhesive bandages, roller gauze and tape",
+      "Clean cloth, drinkable water and flashlight",
+      "Emergency blanket, scissors and written medication list"
+    ],
+    "steps": [
+      "Sort supplies into bleeding, cleaning, bandaging and warmth. Keep sterile items individually wrapped.",
+      "If commercial dressings are missing, set aside freshly washed smooth cloth in sealed bags for temporary use. Use the cleanest available cloth to apply firm, steady pressure to external bleeding. Keep pressure on while checking supplies.",
+      "Rinse minor scrapes with drinkable running water. Cover with a clean dressing, and replace it if wet or dirty.",
+      "Store medication in the original labeled container and check expiration dates. Pack a compact kit for evacuation and keep a larger refill bag at home.",
+      "Practice finding gloves, cloth and a light with one hand. Check supplies after every use."
+    ],
+    "warning": "Keep soil, ash, plant material and unverified mixtures out of wounds. Leave embedded objects in place and apply pressure around them.",
+    "sources": [
+      {
+        "title": "Red Cross · First aid kit",
+        "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/anatomy-of-a-first-aid-kit.html"
+      },
+      {
+        "title": "Red Cross · Severe external bleeding",
+        "url": "https://www.redcross.org/take-a-class/first-aid/performing-first-aid/life-threatening-external-bleeding"
+      }
+    ]
+  },
+  {
+    "id": "field-herbs",
+    "cat": "first-aid",
+    "category": "First Aid",
+    "title": "Food-grade ginger and infection precautions",
+    "overview": "Use known food ingredients for optional comfort and keep wound care and prescription medicine separate.",
+    "keywords": [
+      "herbal medicine",
+      "ginger",
+      "tea",
+      "penicillin",
+      "antibiotic"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Labeled culinary ginger",
+      "Safe drinking water and a clean cup",
+      "Clean dressing and a way to record symptoms",
+      "Any medication prescribed specifically for you"
+    ],
+    "steps": [
+      "For a mild nausea comfort drink, add a thin slice of washed culinary ginger to a cup of hot potable water. Let it steep, remove the slice, cool, and sip only if you can swallow normally. Plain safe water is an option if ginger bothers your stomach.",
+      "Use only ginger you can identify from a food label or a grocery source. Do not use unknown wild plants, concentrated extracts or essential oils in its place.",
+      "If you have a minor scrape, use drinkable water and a clean dressing. Keep the wound covered and replace the dressing if dirty or wet.",
+      "Keep prescription products in their original packaging. Use prescribed antibiotics exactly as labeled. Keep a written record of what you used and when."
+    ],
+    "warning": "Homemade mold preparations cannot be identified, purified or dosed reliably in the field. Ginger is a comfort measure and does not treat a bacterial infection. Herbal products may interact with medication.",
+    "sources": [
+      {
+        "title": "NCCIH · Ginger",
+        "url": "https://www.nccih.nih.gov/health/ginger"
+      },
+      {
+        "title": "CDC · Antibiotic use",
+        "url": "https://www.cdc.gov/antibiotic-use/about/index.html"
+      }
+    ]
+  },
+  {
+    "id": "field-fire",
+    "cat": "warmth",
+    "category": "Fire and Warmth",
+    "title": "Make a simple fire starter and start a small outdoor fire",
+    "overview": "Use dry paper and wood tinder for a supervised fire in a permitted outdoor ring.",
+    "keywords": [
+      "campfire",
+      "homemade",
+      "fire starter",
+      "tinder",
+      "kindling"
+    ],
+    "level": "Beginner",
+    "materials": [
+      "Plain dry paper or uncoated cardboard",
+      "Dry wood shavings, small twigs and split wood",
+      "Lighter or dry matches",
+      "Water and a shovel"
+    ],
+    "steps": [
+      "Check local restrictions and wind. Use a designated clear outdoor ring with water and a shovel within reach.",
+      "For a quick starter, crumple plain dry paper loosely around a handful of dry wood shavings. Fold the edges inward so the bundle holds together and air can still pass through.",
+      "Put the bundle in the ring. Lean a few dry pencil-thin twigs loosely over it. Set finger-thick kindling nearby and add it only once the thin twigs are burning.",
+      "Light a paper edge and watch the flame take. Add dry split wood gradually and keep the fire small. If tinder repeatedly goes out, use drier tinder and leave more air space.",
+      "To put it out, soak the embers, stir, and soak again. Hold a hand above the ashes to check for heat without touching them. Leave only after everything is cold."
+    ],
+    "warning": "Keep fire outdoors away from tents and vehicles. Skip gasoline, alcohol, aerosol sprays and other accelerants. Never leave the fire unattended.",
+    "sources": [
+      {
+        "title": "Smokey Bear · Campfire safety",
+        "url": "https://smokeybear.com/uploads/educational-materials/smokeycampfiresafetyguide.pdf"
+      }
+    ]
   }
 ]

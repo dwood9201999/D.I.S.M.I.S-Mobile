@@ -112,3 +112,17 @@ test('field chat ranks bundled projects and returns no answer for unrelated ques
   assert.deepEqual(search('Who invented croissants?'), []);
   assert.ok(offlineAssets.includes('./field-chat.js'));
 });
+
+test('Morse course covers all 50 levels with encodable answers', async () => {
+  const { levels, normalizeAnswer } = await import('../morse-course.js');
+  assert.equal(levels.length, 50);
+  assert.equal(levels[9].title, 'Letters and numbers');
+  assert.ok(levels.slice(10, 25).every(level => level.title === 'Words'));
+  assert.ok(levels.slice(25).every(level => level.title === 'Phrases'));
+  for (const level of levels) {
+    assert.ok(level.prompts.length >= 2);
+    for (const prompt of level.prompts) assert.equal(decode(encode(prompt)), prompt);
+  }
+  assert.equal(normalizeAnswer('  radio   check '), 'RADIO CHECK');
+  assert.ok(offlineAssets.includes('./morse-course.js'));
+});

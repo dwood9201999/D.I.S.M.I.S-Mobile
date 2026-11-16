@@ -1,3 +1,4 @@
+import { mountCourse } from './morse-course.js';
 import { alphabet, encode, decode, audioTimeline } from './morse-core.js';
 import { installOffline } from './offline-assets.js';
 
@@ -15,6 +16,16 @@ const trainerHTML = `<h2 tabindex="-1">Morse Code · Offline Trainer</h2><p>Inte
 <form id="drill-form"><label for="guess">Your answer</label><input id="guess" maxlength="1" autocomplete="off" autocapitalize="characters" required>
 <button id="check" disabled>Check answer</button><button id="reveal" type="button" disabled>Reveal</button></form>
 <p id="drill-status" role="status"></p></section>
+<section class="card"><h2>50-level decoding course</h2>
+<p>Levels 1–10 cover letters and numbers, 11–25 cover words, and 26–50 cover phrases. Complete every round to unlock the next level. The course uses your playback mode and speed above.</p>
+<label for="course-level">Choose a level</label><select id="course-level"></select>
+<p id="course-round"></p>
+<div class="morse-signal" id="course-light-panel" hidden><span class="signal-light" id="course-light" aria-hidden="true"></span><span>Screen signal</span></div>
+<div class="row"><button id="course-replay">Play course signal</button><button id="course-stop">Stop course signal</button><button id="course-show-code">Show written Morse</button></div>
+<p id="course-code" class="output" hidden></p>
+<form id="course-form"><label for="course-answer">Decode the signal</label><input id="course-answer" maxlength="120" autocomplete="off" required>
+<button id="course-check">Check decoding</button><button type="button" id="course-next" hidden>Next level</button></form>
+<p id="course-playback" role="status"></p><p id="course-status" role="status"></p></section>
 <section class="card"><h2>Alphabet and numbers</h2><div id="alphabet" class="grid"></div></section>
 <section class="card"><h2>Distress signaling and safety</h2><p>SOS is <strong>...---...</strong>, a continuous distress signal with no ordinary letter gaps. The text “SOS” in the encoder plays three separate letters for practice. Use recognized emergency channels and established emergency services when available. A phone screen or flashlight may help signal visually, but visibility and detection are not guaranteed.</p><p>This tool teaches Morse encoding and audio timing; it does not transmit radio signals. Transmitting on radio frequencies may require compliant equipment and licensing.</p></section>`;
 
@@ -42,19 +53,19 @@ export function mountMorseTrainer(root) {
     clearTimeout(playback.timer);
     cancelAnimationFrame(playback.frame);
     playback.context?.close().catch(() => {});
-    light.classList.remove('is-lit');
+    playback.light.classList.remove('is-lit');
     playback = null;
   }
 
-  async function play(encoded) {
+  async function play(encoded, signalLight = light, statusId = 'status') {
     stop();
     const pulses = audioTimeline(encoded);
-    if (!pulses.length) return report('status', 'Enter some letters or numbers first.');
+    if (!pulses.length) return report(statusId, 'Enter some letters or numbers first.');
     const withLight = mode.value !== 'audio';
     const withAudio = mode.value !== 'light';
     const Audio = window.AudioContext || window.webkitAudioContext;
-    if (withAudio && !Audio) return report('status', 'Audio is unavailable in this browser. Try screen light only.');
-    const session = {};
+    if (withAudio && !Audio) return report(statusId, 'Audio is unavailable in this browser. Try screen light only.');
+    const session = { light: signalLight };
     playback = session;
     try {
       if (withAudio) {
@@ -94,27 +105,29 @@ export function mountMorseTrainer(root) {
           if (session !== playback) return;
           const elapsed = (now() - start) / unit;
           while (index < pulses.length && elapsed >= pulses[index].start + pulses[index].length) index++;
-          light.classList.toggle('is-lit', index < pulses.length && elapsed >= pulses[index].start);
+          signalLight.classList.toggle('is-lit', index < pulses.length && elapsed >= pulses[index].start);
           if (index < pulses.length) session.frame = requestAnimationFrame(paint);
         }
         session.frame = requestAnimationFrame(paint);
       }
-      report('status', withLight ? (withAudio ? 'Playing Morse sound and light.' : 'Playing Morse light signal.') : 'Playing Morse audio.');
+      report(statusId, withLight ? (withAudio ? 'Playing Morse sound and light.' : 'Playing Morse light signal.') : 'Playing Morse audio.');
       session.timer = setTimeout(() => {
         if (session !== playback) return;
         stop();
-        report('status', 'Playback finished.');
+        report(statusId, 'Playback finished.');
       }, (end - now()) * 1000 + 60);
     } catch {
       if (playback !== session) return;
       stop();
-      report('status', 'Playback could not start. Try another playback mode.');
+      report(statusId, 'Playback could not start. Try another playback mode.');
     }
   }
 
   mode.onchange = () => {
     stop();
     byId('signal-panel').hidden = mode.value === 'audio';
+    byId('course-light-panel').hidden = mode.value === 'audio';
+    report('course-playback', '');
     byId('sound').textContent = { audio: 'Play audio', light: 'Play light', both: 'Play sound and light' }[mode.value];
     report('status', '');
   };
@@ -150,6 +163,12 @@ export function mountMorseTrainer(root) {
     report('drill-status', correct ? 'Correct.' : 'Try again or replay the character.');
   };
   byId('reveal').onclick = () => report('drill-status', `Answer: ${challenge} (${alphabet[challenge]}).`);
+
+  mountCourse(root, encoded => play(encoded, byId('course-light'), 'course-playback'), encode, stop);
+  byId('course-stop').onclick = () => {
+    stop();
+    report('course-playback', 'Stopped.');
+  };
 
   return () => {
     stop();

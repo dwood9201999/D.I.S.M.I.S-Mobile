@@ -32,12 +32,13 @@ const offlineAssets = [
   "./photos/handheld.webp",
   "./morse.js",
   "./morse-core.js",
+  "./morse-course.js",
   "./icon.svg",
   "./manifest.webmanifest"
 ];
 
 const scope = self.registration.scope;
-const cacheName = `D.I.S.M.I.S./v3-preview-11-${scope}`;
+const cacheName = `D.I.S.M.I.S./v3-preview-12-${scope}`;
 const assets = new Set(offlineAssets.map(path => new URL(path, scope).href));
 
 self.addEventListener('install', event => {
