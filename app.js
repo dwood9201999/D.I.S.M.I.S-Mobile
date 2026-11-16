@@ -157,7 +157,7 @@ function renderElectrical(guideId) {
           </figcaption>
         </figure>` : '<p class="muted">Reference photo pending.</p>'}
         <p>${escape(appearance)}</p>
-        <p><strong>Where to find it.</strong> ${escape(source)}</p>
+        <p><strong>Common donor items and salvage sources.</strong> ${escape(source)}</p>
         <p><strong>How to identify or check it.</strong> ${escape(verify)}</p></article>`;
     }).join('')}</div>
     ${entry.wiring.length ? `<h3>Connection map</h3><ol>${entry.wiring.map(([from, to, how]) =>
