@@ -21,7 +21,7 @@ node --test
 ## Included
 
 - Ask the Field Guide searches saved material from a chat interface, links to sources, shows relevant parts photos, and walks through one saved step at a time. It uses local text matching.
-- 32 searchable field guides with category filters and step progress. New communications material covers a battery-free AM loop receiver, a regulated hand-crank listening kit, a walkie-talkie check-in drill, and NOAA Weather Radio setup.
+- 33 searchable field guides with category filters and step progress. New communications material covers a battery-free AM loop receiver, a regulated hand-crank listening kit, a walkie-talkie check-in drill, and NOAA Weather Radio setup.
 - Ten searchable, bundled technical references with related guides and source links. Summaries and the receiver-runtime estimator work offline. External source pages require internet.
 - Emergency preparedness guides cover sheltering, evacuation, blackouts, water and communications interruptions, long disruptions and fallout. First aid and outdoor fire guides include materials lists and numbered steps.
 - Fifty Morse course levels progress from characters to words and phrases, with written, sound and screen-light practice. Completed levels unlock the next level on this device.

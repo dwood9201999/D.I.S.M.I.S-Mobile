@@ -17,10 +17,13 @@ const trainerHTML = `<h2 tabindex="-1">Morse Code · Offline Trainer</h2><p>Inte
 <button id="check" disabled>Check answer</button><button id="reveal" type="button" disabled>Reveal</button></form>
 <p id="drill-status" role="status"></p></section>
 <section class="card"><h2>50-level decoding course</h2>
-<p>Levels 1–10 cover letters and numbers, 11–25 cover words, and 26–50 cover phrases. Complete every round to unlock the next level. The course uses your playback mode and speed above.</p>
+<p>Levels 1–10 cover letters and numbers, 11–25 cover words, and 26–50 cover phrases. Complete every round to unlock the next level. Choose sound, screen light, or both. Adjust signal speed in Encode a message.</p>
 <label for="course-level">Choose a level</label><select id="course-level"></select>
 <p id="course-round"></p>
-<div class="morse-signal" id="course-light-panel" hidden><span class="signal-light" id="course-light" aria-hidden="true"></span><span>Screen signal</span></div>
+<label for="course-mode">Course playback mode</label><select id="course-mode">
+<option value="audio">Sound only</option><option value="light">Screen light only</option><option value="both" selected>Sound and screen light</option>
+</select>
+<div class="morse-signal" id="course-light-panel"><span class="signal-light" id="course-light" aria-hidden="true"></span><span>Screen signal</span></div>
 <div class="row"><button id="course-replay">Play course signal</button><button id="course-stop">Stop course signal</button><button id="course-show-code">Show written Morse</button></div>
 <p id="course-code" class="output" hidden></p>
 <form id="course-form"><label for="course-answer">Decode the signal</label><input id="course-answer" maxlength="120" autocomplete="off" required>
@@ -36,6 +39,7 @@ export function mountMorseTrainer(root) {
   const characters = Object.keys(alphabet).filter(key => /^[A-Z0-9]$/.test(key));
   const light = byId('signal-light');
   const mode = byId('signal-mode');
+  const courseMode = byId('course-mode');
   let playback = null;
   let challenge = null;
 
@@ -57,12 +61,12 @@ export function mountMorseTrainer(root) {
     playback = null;
   }
 
-  async function play(encoded, signalLight = light, statusId = 'status') {
+  async function play(encoded, signalLight = light, statusId = 'status', playbackMode = mode.value) {
     stop();
     const pulses = audioTimeline(encoded);
     if (!pulses.length) return report(statusId, 'Enter some letters or numbers first.');
-    const withLight = mode.value !== 'audio';
-    const withAudio = mode.value !== 'light';
+    const withLight = playbackMode !== 'audio';
+    const withAudio = playbackMode !== 'light';
     const Audio = window.AudioContext || window.webkitAudioContext;
     if (withAudio && !Audio) return report(statusId, 'Audio is unavailable in this browser. Try screen light only.');
     const session = { light: signalLight };
@@ -126,8 +130,6 @@ export function mountMorseTrainer(root) {
   mode.onchange = () => {
     stop();
     byId('signal-panel').hidden = mode.value === 'audio';
-    byId('course-light-panel').hidden = mode.value === 'audio';
-    report('course-playback', '');
     byId('sound').textContent = { audio: 'Play audio', light: 'Play light', both: 'Play sound and light' }[mode.value];
     report('status', '');
   };
@@ -164,7 +166,12 @@ export function mountMorseTrainer(root) {
   };
   byId('reveal').onclick = () => report('drill-status', `Answer: ${challenge} (${alphabet[challenge]}).`);
 
-  mountCourse(root, encoded => play(encoded, byId('course-light'), 'course-playback'), encode, stop);
+  courseMode.onchange = () => {
+    stop();
+    byId('course-light-panel').hidden = courseMode.value === 'audio';
+    report('course-playback', '');
+  };
+  mountCourse(root, encoded => play(encoded, byId('course-light'), 'course-playback', courseMode.value), encode, stop);
   byId('course-stop').onclick = () => {
     stop();
     report('course-playback', 'Stopped.');
