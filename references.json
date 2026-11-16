@@ -1,0 +1,180 @@
+[
+  {
+    "id": "nwr-frequencies",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "U.S. NOAA Weather Radio frequencies",
+    "overview": "The seven frequencies are outside the regular AM and FM broadcast dial.",
+    "keywords": [
+      "nwr",
+      "vhf",
+      "wx",
+      "same",
+      "alert"
+    ],
+    "points": [
+      "162.400, 162.425, 162.450, 162.475, 162.500, 162.525 and 162.550 MHz.",
+      "Receiver channel numbers can vary. Match the actual frequency in your manual.",
+      "SAME-capable alert receivers can filter by configured area. Test in standby."
+    ],
+    "guide": "radio-weather-alerts",
+    "sources": [
+      {
+        "title": "National Weather Service · NOAA Weather Radio",
+        "url": "https://www.weather.gov/nwr/"
+      },
+      {
+        "title": "National Weather Service · Weather radio receivers",
+        "url": "https://www.weather.gov/dsb/nwr_receivers"
+      }
+    ]
+  },
+  {
+    "id": "radio-services",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "FRS and GMRS handhelds",
+    "overview": "Two U.S. voice radio services that share some channels.",
+    "keywords": [
+      "walkie talkie",
+      "license",
+      "privacy codes",
+      "tone",
+      "ctcss",
+      "dcs"
+    ],
+    "points": [
+      "Certified FRS handhelds are licensed by rule in the U.S. GMRS generally requires an individual FCC license.",
+      "Tone codes control what opens your speaker. Anyone on the channel can still hear the conversation."
+    ],
+    "guide": "radio-walkie-talkies",
+    "sources": [
+      {
+        "title": "FCC · Family Radio Service",
+        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/family-radio-service-frs"
+      },
+      {
+        "title": "FCC · General Mobile Radio Service",
+        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/general-mobile-radio-service-gmrs"
+      }
+    ]
+  },
+  {
+    "id": "crystal-detector",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "AM detector and high-impedance audio",
+    "overview": "A loop and capacitor tune the signal, then the diode recovers the audio envelope.",
+    "keywords": [
+      "diode",
+      "tuner",
+      "LC",
+      "earpiece"
+    ],
+    "points": [
+      "With a fixed coil, increasing capacitance lowers the tuned frequency.",
+      "A low-impedance speaker or standard headset can load down a passive detector. Use the kit-approved high-impedance transducer."
+    ],
+    "guide": "radio-crystal-loop",
+    "sources": [
+      {
+        "title": "New Jersey Antique Radio Club · Crystal Set Projects, loop receiver",
+        "url": "https://www.njarc.org/books/Crystal%20Radio/Crystal-Set-Projects-Xtal-Set-Society-1997.pdf"
+      }
+    ]
+  },
+  {
+    "id": "crank-runtime",
+    "cat": "power",
+    "category": "Power",
+    "title": "Receiver power and runtime",
+    "overview": "Use measured listening time to plan a backup power reserve.",
+    "keywords": [
+      "crank",
+      "USB",
+      "W",
+      "Wh",
+      "volts",
+      "amps"
+    ],
+    "points": [
+      "Power in watts is volts × amps. A 5 V receiver drawing 0.2 A uses approximately 1 W.",
+      "Energy in watt-hours is watts × hours. Real runtime depends on usable energy, conversion loss, volume and battery condition."
+    ],
+    "guide": "radio-crank-kit",
+    "sources": [
+      {
+        "title": "FEMA Ready · Emergency supply checklist",
+        "url": "https://www.ready.gov/sites/default/files/2022-04/ready_checklist.pdf"
+      }
+    ]
+  },
+  {
+    "id": "morse-timing",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "International Morse timing",
+    "overview": "Count signal length and silence using the same base unit.",
+    "keywords": [
+      "dot",
+      "dash",
+      "SOS",
+      "CW"
+    ],
+    "points": [
+      "Dot: 1 unit. Dash: 3 units. Within-character gap: 1 unit.",
+      "Between characters: 3 units. Between words: 7 units. The continuous SOS prosign uses one-unit internal gaps."
+    ],
+    "guide": null,
+    "sources": [
+      {
+        "title": "ITU · International Morse code",
+        "url": "https://www.itu.int/rec/R-REC-M.1677/en"
+      }
+    ]
+  },
+  {
+    "id": "mesh-basics",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Meshtastic and LoRa basics",
+    "overview": "Compatible LoRa radios can exchange local messages without internet.",
+    "keywords": [
+      "mesh",
+      "offline",
+      "relay",
+      "region",
+      "hardware"
+    ],
+    "points": [
+      "Choose the correct device region and matching channel configuration before testing.",
+      "Rehearse delivery with a second device. Terrain, antenna position and routing affect delivery."
+    ],
+    "guide": null,
+    "sources": [
+      {
+        "title": "Meshtastic · Introduction",
+        "url": "https://meshtastic.org/docs/introduction/"
+      }
+    ]
+  },
+  {
+    "id": "message-format",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Field message checklist",
+    "overview": "Use a consistent format for a spoken check-in or handwritten radio log.",
+    "keywords": [
+      "voice",
+      "readback",
+      "log",
+      "check-in"
+    ],
+    "points": [
+      "Record timestamp and time zone, who sent the message, location, situation and requested action.",
+      "Repeat back coordinates and other critical details. Log whether the message was acknowledged."
+    ],
+    "guide": "radio-walkie-talkies",
+    "sources": []
+  }
+]

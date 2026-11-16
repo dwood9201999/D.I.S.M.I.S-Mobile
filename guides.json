@@ -287,7 +287,21 @@
       "Test reception at multiple positions, away from electrical noise.",
       "Schedule brief listening windows to conserve battery."
     ],
-    "warning": "NOAA weather radio uses seven VHF frequencies from 162.400 to 162.550 MHz and requires a compatible receiver. A crystal AM radio cannot receive NOAA broadcasts."
+    "warning": "NOAA weather radio uses seven VHF frequencies from 162.400 to 162.550 MHz and requires a compatible receiver. A crystal AM radio cannot receive NOAA broadcasts.",
+    "sources": [
+      {
+        "title": "National Weather Service · NOAA Weather Radio",
+        "url": "https://www.weather.gov/nwr/"
+      },
+      {
+        "title": "National Weather Service · Weather radio receivers",
+        "url": "https://www.weather.gov/dsb/nwr_receivers"
+      },
+      {
+        "title": "FEMA Ready · Emergency supply checklist",
+        "url": "https://www.ready.gov/sites/default/files/2022-04/ready_checklist.pdf"
+      }
+    ]
   },
   {
     "id": "g14",
@@ -424,5 +438,151 @@
       "If it is a permanent-magnet DC motor, rotate the shaft by hand and measure small generated voltage."
     ],
     "warning": "Appliances may retain dangerous charge after unplugging. Do not salvage parts from microwaves, CRT televisions, or high-voltage power supplies without qualified supervision."
+  },
+  {
+    "id": "radio-crystal-loop",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Build a battery-free AM crystal radio",
+    "level": "Beginner",
+    "overview": "Assemble a receive-only loop crystal set for learning how a tuner and detector recover AM audio.",
+    "keywords": [
+      "emergency radio construction",
+      "diode",
+      "LC tuning",
+      "passive receiver"
+    ],
+    "materials": [
+      "Medium-wave AM loop and matching variable capacitor from a crystal-radio kit",
+      "1N34A germanium detector diode or the kit-specified detector",
+      "High-impedance crystal earpiece with its kit-specified shunt resistor",
+      "Dry nonconductive base, short leads, and a multimeter"
+    ],
+    "steps": [
+      "Identify two nodes from the kit drawing: the tuned node and the return. Connect the loop and tuning capacitor in parallel between these nodes.",
+      "Connect the diode anode to the tuned node and its banded cathode to the audio node. Connect the earpiece between the audio node and return. Put the specified shunt resistor across the earpiece to give the detector a DC return.",
+      "Use the kit drawing to verify the joints and ensure there is no accidental short across the earpiece or the capacitor plates. The loop itself may show low DC resistance across the tuning nodes.",
+      "Rotate the loop indoors as you sweep the tuning capacitor. Compare against a known local AM station you can receive on a separate radio. If there is silence, check the earpiece type, loose connections, tuner movement and station strength first."
+    ],
+    "warning": "Use a self-contained indoor loop. Keep it away from mains, electrical wiring and outdoor antennas. This experiment depends on local AM signal strength and cannot receive FM or NOAA weather alerts.",
+    "sources": [
+      {
+        "title": "New Jersey Antique Radio Club · Crystal Set Projects, loop receiver",
+        "url": "https://www.njarc.org/books/Crystal%20Radio/Crystal-Set-Projects-Xtal-Set-Society-1997.pdf"
+      }
+    ]
+  },
+  {
+    "id": "radio-crank-kit",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Assemble and test a hand-crank receiver",
+    "level": "Beginner",
+    "overview": "Pair a manufacturer-regulated hand-crank USB power source with a compatible small receiver. A suitable model can serve as a backup listening setup.",
+    "keywords": [
+      "dynamo",
+      "crank power",
+      "USB",
+      "AM FM WX",
+      "emergency receiver"
+    ],
+    "materials": [
+      "Hand-crank USB generator or power bank with documented regulated output and protected storage",
+      "Receiver with a manufacturer-approved USB power input and documented current requirement",
+      "Manufacturer-approved cabled connection, USB meter, enclosure or strap, and backup batteries"
+    ],
+    "steps": [
+      "Confirm that the source and receiver agree on the required USB voltage and current. Check whether the receiver can listen while externally powered. Select a model explicitly supporting NOAA Weather Radio and standby alerting if that is your requirement.",
+      "Mount the two finished units in a ventilated carrier with the antenna, controls and crank unobstructed. Secure the cable so pulling on it does not strain either port.",
+      "Use the crank only as directed by its manual to charge the protected store. Measure the USB output under the receiver load if you have a suitable inline meter. Verify the receiver starts, stays tuned, and does not repeatedly reboot.",
+      "At a fixed volume, record the elapsed listening time after a timed crank session. Test voice reception and any alert feature separately. Keep a known-good battery supply available and repeat the test before relying on the kit."
+    ],
+    "warning": "Use intact commercial power hardware. Never wire a bare generator to batteries or the receiver. Stop if the source overheats, the receiver resets, or the output falls outside its specified range.",
+    "sources": [
+      {
+        "title": "FEMA Ready · Emergency supply checklist",
+        "url": "https://www.ready.gov/sites/default/files/2022-04/ready_checklist.pdf"
+      },
+      {
+        "title": "National Weather Service · Weather radio receivers",
+        "url": "https://www.weather.gov/dsb/nwr_receivers"
+      }
+    ]
+  },
+  {
+    "id": "radio-walkie-talkies",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Practice a walkie-talkie check-in",
+    "level": "Beginner",
+    "overview": "Set up a U.S. family or group radio drill with certified handhelds, a check-in schedule and a fallback.",
+    "keywords": [
+      "FRS",
+      "GMRS",
+      "walkie talkie",
+      "push to talk",
+      "CTCSS",
+      "DCS",
+      "radio check"
+    ],
+    "materials": [
+      "Two compatible certified radios and their manuals",
+      "Fresh batteries or full charges",
+      "Paper check-in plan"
+    ],
+    "steps": [
+      "Identify each radio service from its label or documentation. For a U.S. FRS exercise use certified FRS radios. GMRS generally requires an FCC license.",
+      "Agree on a primary channel, backup channel, check-in time and meeting place. For the first test disable the tone or code on both radios to make setup easier.",
+      "Listen before transmitting. Press push-to-talk, pause briefly, and speak: “Base, this is Team One. Radio check. Over.” Release the button and wait for readback.",
+      "Test at both intended locations. Record where the channel works and where it drops out. Rehearse moving to the backup channel at the scheduled time after a missed check-in.",
+      "For short reports, give location, time, what happened and what help you need. Ask the receiver to repeat critical details."
+    ],
+    "warning": "U.S. guidance. Tone codes filter received audio and do not create privacy. Keep sensitive details off shared channels. For emergencies use 911 when reachable. Do not assume anyone monitors your channel.",
+    "sources": [
+      {
+        "title": "FCC · Family Radio Service",
+        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/family-radio-service-frs"
+      },
+      {
+        "title": "FCC · General Mobile Radio Service",
+        "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/general-mobile-radio-service-gmrs"
+      }
+    ]
+  },
+  {
+    "id": "radio-weather-alerts",
+    "cat": "radio",
+    "category": "Communications",
+    "title": "Set up NOAA Weather Radio alerts",
+    "level": "Beginner",
+    "overview": "Verify local forecast audio and standby alerts on a compatible receiver ahead of severe weather.",
+    "keywords": [
+      "NWR",
+      "VHF",
+      "SAME",
+      "tone alert",
+      "weather frequencies"
+    ],
+    "materials": [
+      "NOAA Weather Radio alert-capable receiver",
+      "Its manual",
+      "Backup batteries and local transmitter information"
+    ],
+    "steps": [
+      "With the antenna extended as directed, scan the weather channels and listen for the strongest clear local broadcast. Record the frequency and station.",
+      "If the model supports SAME, enter the county or area codes from the official NWS listing and confirm which alerts the model has enabled.",
+      "Put the set in alert standby and confirm reception of a scheduled local test where available. Test the receiver again on backup batteries and in the room where you will use it."
+    ],
+    "warning": "Weather-band reception and automatic alerting are separate features. Keep another way to receive alerts in case coverage, equipment or power fails.",
+    "sources": [
+      {
+        "title": "National Weather Service · NOAA Weather Radio",
+        "url": "https://www.weather.gov/nwr/"
+      },
+      {
+        "title": "National Weather Service · Weather radio receivers",
+        "url": "https://www.weather.gov/dsb/nwr_receivers"
+      }
+    ]
   }
 ]

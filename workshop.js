@@ -1,48 +1,43 @@
+/** Rank local catalog entries, requiring every term to match somewhere. */
+export function searchCatalog(entries, query, category = 'all') {
+  const terms = query.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
+  return entries
+    .filter(entry => category === 'all' || entry.cat === category)
+    .map(entry => {
+      const heading = [entry.title, entry.category, ...(entry.keywords ?? [])].join(' ').toLowerCase();
+      const body = [entry.overview, entry.warning, ...(entry.materials ?? []),
+        ...(entry.steps ?? []), ...(entry.points ?? [])].join(' ').toLowerCase();
+      const scores = terms.map(term => heading.includes(term) ? 3 : body.includes(term) ? 1 : 0);
+      return { entry, score: scores.includes(0) ? -1 : scores.reduce((sum, value) => sum + value, 0) };
+    })
+    .filter(result => result.score >= 0)
+    .sort((a, b) => b.score - a.score)
+    .map(result => result.entry);
+}
 
-'use strict';
+/** Transport boundaries reserved for real, separately installed providers. */
+export const integrationContracts = Object.freeze({
+  localAI: Object.freeze(['status', 'answer']),
+  meshtastic: Object.freeze(['status', 'listNodes', 'onMessage', 'sendText']),
+  hardware: Object.freeze(['status', 'listDevices', 'readTelemetry']),
+});
 
-// D.I.S.M.I.S. Mobile — Field Workshop Library
-// Future knowledge source for Mimir
-
-const WORKSHOP_TOPICS = [
-  {
-    id: 'water-collection',
-    title: 'Emergency Water Collection',
-    category: 'Water',
-    tools: [
-      'Clean containers',
-      'Clean cloth',
-      'Water treatment supplies'
-    ],
-    safety: 'Collected water must be treated before drinking. Do not use water suspected of chemical or fuel contamination.',
-    steps: [
-      'Identify the cleanest available water source.',
-      'Avoid water with unusual odors, oily films, or nearby chemical contamination.',
-      'Collect water in a clean container.',
-      'Remove visible sediment using a clean cloth.',
-      'Treat the water using an appropriate verified method before drinking.',
-      'Store treated water in a clean, covered container.'
-    ]
-  },
-  {
-    id: 'emergency-shelter',
-    title: 'Emergency Shelter Construction',
-    category: 'Shelter',
-    tools: [
-      'Tarp or waterproof covering',
-      'Cordage',
-      'Insulating ground material'
-    ],
-    safety: 'Avoid flood zones, unstable trees, falling branches, and enclosed fuel-burning heaters.',
-    steps: [
-      'Choose stable ground away from obvious hazards.',
-      'Identify the prevailing wind direction.',
-      'Secure a waterproof covering against rain and wind.',
-      'Insulate the sleeping area from the ground.',
-      'Maintain ventilation.',
-      'Inspect the shelter regularly for changing weather conditions.'
-    ]
-  }
-];
-
-window.DISMIS_WORKSHOP = WORKSHOP_TOPICS;
+export function createIntegrations() {
+  const providers = new Map();
+  return Object.freeze({
+    register(kind, provider) {
+      const methods = Object.hasOwn(integrationContracts, kind) && integrationContracts[kind];
+      if (!methods || !methods.every(method => typeof provider?.[method] === 'function')) {
+        throw new TypeError(`Invalid provider for ${kind}`);
+      }
+      if (providers.has(kind)) throw new Error(`Provider already registered for ${kind}`);
+      providers.set(kind, provider);
+      return () => {
+        if (providers.get(kind) === provider) providers.delete(kind);
+      };
+    },
+    get(kind) {
+      return providers.get(kind) ?? null;
+    },
+  });
+}
