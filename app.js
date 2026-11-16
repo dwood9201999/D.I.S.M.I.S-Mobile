@@ -1,4 +1,3 @@
-import { mountMorseTrainer } from './morse.js';
 import { findFieldAnswers } from './field-chat.js';
 import { electrical, parts } from './electrical.js';
 import { componentPhotos } from './component-photos.js';
@@ -65,7 +64,15 @@ function render() {
   unmountMorse?.();
   unmountMorse = undefined;
   if (activeView === 'morse') {
-    unmountMorse = mountMorseTrainer(main);
+    main.innerHTML = '<p id="morse-loading" role="status">Opening Morse Trainer…</p>';
+    const loading = byId('morse-loading');
+    import('./morse.js').then(({ mountMorseTrainer }) => {
+      if (!loading.isConnected) return;
+      unmountMorse = mountMorseTrainer(main);
+      main.querySelector('h2').focus();
+    }).catch(() => {
+      if (loading.isConnected) loading.textContent = 'Morse Trainer could not load. Reload while online and check offline readiness.';
+    });
     return;
   }
   if (activeView === 'notes') return renderNotes();
