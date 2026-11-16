@@ -1,3 +1,4 @@
+import { mountMorseTrainer } from './morse.js';
 import { findFieldAnswers } from './field-chat.js';
 import { electrical, parts } from './electrical.js';
 import { componentPhotos } from './component-photos.js';
@@ -17,6 +18,7 @@ let guideId = null;
 let catalog = { guides: [], references: [] };
 let catalogLoad;
 let notesDraft;
+let unmountMorse;
 const conversation = [];
 let walkthrough;
 
@@ -60,6 +62,12 @@ function show(view, id = null, focus = false) {
 }
 
 function render() {
+  unmountMorse?.();
+  unmountMorse = undefined;
+  if (activeView === 'morse') {
+    unmountMorse = mountMorseTrainer(main);
+    return;
+  }
   if (activeView === 'notes') return renderNotes();
   if (activeView === 'about') return renderAbout();
   if (catalogLoad === 'error') {
