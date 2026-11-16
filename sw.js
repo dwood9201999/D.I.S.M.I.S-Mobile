@@ -1,7 +1,43 @@
-import { offlineAssets } from './offline-assets.js';
+// Keep this list in sync with offline entry points, data, and media.
+const offlineAssets = [
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./field-chat.js",
+  "./workshop.js",
+  "./electrical.js",
+  "./component-photos.js",
+  "./offline-assets.js",
+  "./guides.json",
+  "./references.json",
+  "./morse.html",
+  "./photos/loop.webp",
+  "./photos/capacitor.webp",
+  "./photos/diode.webp",
+  "./photos/ear.webp",
+  "./photos/resistor.webp",
+  "./photos/meter.webp",
+  "./photos/motor.webp",
+  "./photos/regulator.webp",
+  "./photos/crank.webp",
+  "./photos/usb.webp",
+  "./photos/load.webp",
+  "./photos/receiver.webp",
+  "./photos/panel.webp",
+  "./photos/controller.webp",
+  "./photos/battery.webp",
+  "./photos/fuse.webp",
+  "./photos/turbine.webp",
+  "./photos/handheld.webp",
+  "./morse.js",
+  "./morse-core.js",
+  "./icon.svg",
+  "./manifest.webmanifest"
+];
 
 const scope = self.registration.scope;
-const cacheName = `D.I.S.M.I.S./v3-preview-8-${scope}`;
+const cacheName = `D.I.S.M.I.S./v3-preview-9-${scope}`;
 const assets = new Set(offlineAssets.map(path => new URL(path, scope).href));
 
 self.addEventListener('install', event => {

@@ -1,13 +1,17 @@
-import { componentPhotos } from './component-photos.js';
-
-export const offlineAssets = Object.freeze([
-  './', './index.html', './styles.css', './app.js', './field-chat.js', './workshop.js', './electrical.js', './component-photos.js',
-  './offline-assets.js', './guides.json', './references.json', './morse.html',
-  ...Object.values(componentPhotos).map(photo => photo.path),
-  './morse.js', './morse-core.js', './icon.svg', './manifest.webmanifest',
-]);
+let registrationAttempt;
 
 export function installOffline() {
-  if (!('serviceWorker' in navigator)) return Promise.resolve(null);
-  return navigator.serviceWorker.register('./sw.js', { type: 'module' }).catch(() => null);
+  if (!globalThis.isSecureContext) {
+    return Promise.resolve({ error: 'Open the HTTPS site to set up offline access.' });
+  }
+  if (!('serviceWorker' in navigator)) {
+    return Promise.resolve({ error: 'This browser session does not support offline setup. Open the link directly in Safari.' });
+  }
+  registrationAttempt ??= navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
+    .then(registration => ({ registration }))
+    .catch(error => {
+      registrationAttempt = undefined;
+      return { error: `Offline setup could not start (${error.name}). ${error.message}` };
+    });
+  return registrationAttempt;
 }

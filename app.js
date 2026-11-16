@@ -11,7 +11,7 @@ const escape = value => String(value).replace(/[&<>"']/g, char =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const tabs = { guides: {}, references: {} };
 const integrations = createIntegrations();
-const offlineRegistration = installOffline();
+installOffline();
 let activeView = 'guides';
 let guideId = null;
 let catalog = { guides: [], references: [] };
@@ -376,11 +376,16 @@ function renderAbout() {
     const output = byId('offline-status');
     output.textContent = 'Checking offline files…';
     try {
-      const registration = await offlineRegistration;
-      const worker = registration && navigator.serviceWorker.controller;
+      const { registration, error } = await installOffline();
+      if (error) {
+        output.textContent = error;
+        return;
+      }
+      const worker = navigator.serviceWorker.controller;
       if (!worker) {
-        output.textContent = registration ? 'Offline setup is pending. Check again after reloading online.' :
-          'Offline caching is unavailable here. Open the site over HTTPS or localhost.';
+        output.textContent = registration.installing || registration.waiting || registration.active ?
+          'Offline setup is pending. Check again after reloading online.' :
+          'Offline setup could not download all required files. Check your connection and reload while online.';
         return;
       }
       const channel = new MessageChannel();

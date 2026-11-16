@@ -1,11 +1,8 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import vm from 'node:vm';
-import { offlineAssets } from '../offline-assets.js';
+import { offlineAssets, workerSource } from './worker-source.mjs';
 
-const workerSource = readFileSync(new URL('../sw.js', import.meta.url), 'utf8')
-  .replace(/^import.*\n/, '');
 const scope = 'https://example.test/D.I.S.M.I.S-Mobile/';
 const urls = offlineAssets.map(path => new URL(path, scope).href);
 
@@ -35,7 +32,7 @@ function createWorker({ missing } = {}) {
     },
   };
   vm.runInNewContext(workerSource, {
-    URL, Request, offlineAssets, caches,
+    URL, Request, caches,
     fetch: async request => 'network:' + request.url,
     self: {
       registration: { scope },

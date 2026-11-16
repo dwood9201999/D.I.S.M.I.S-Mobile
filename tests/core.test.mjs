@@ -4,7 +4,7 @@ import { test } from 'node:test';
 
 import { searchCatalog, receiverRuntime, createIntegrations } from '../workshop.js';
 import { audioTimeline, decode, encode } from '../morse-core.js';
-import { offlineAssets } from '../offline-assets.js';
+import { offlineAssets } from './worker-source.mjs';
 
 const read = name => JSON.parse(readFileSync(new URL('../' + name, import.meta.url)));
 const guides = read('guides.json');

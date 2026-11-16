@@ -25,7 +25,7 @@ node --test
 - Ten searchable, bundled technical references with related guides and source links. Summaries and the receiver-runtime estimator work offline. External source pages require internet.
 - Morse encoding and decoding, adjustable-speed audio, a character chart, and randomized listening drills. Audio stays on the device.
 - Field Notes with autosave, text export and append-only text import. Existing notes and progress for unchanged guides on the same origin retain their storage keys. The replacement cold-weather warmth guide starts with fresh progress. Keep an exported backup if browser data is cleared.
-- An all-or-nothing offline cache for the app, references and Morse trainer, scoped to the app's URL. When shipping updated assets, update the cache version in `sw.js` and update the asset list in `offline-assets.js` if necessary.
+- An all-or-nothing offline cache for the app, references and Morse trainer, scoped to the app's URL. When shipping updated assets, update the cache version in `sw.js` and update its asset list if necessary.
 
 ## Integration foundation
 
